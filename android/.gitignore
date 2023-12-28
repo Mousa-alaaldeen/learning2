@@ -11,5 +11,5 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
-/lib/component/ads/ad_helper.dart
+
 
