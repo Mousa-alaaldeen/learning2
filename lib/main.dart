@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, depend_on_referenced_packages, avoid_print, unused_import
-
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -11,11 +9,22 @@ import 'package:test1/screen/splach/splash_screen.dart';
 import 'generated/l10n.dart';
 
 void main() async {
-  //var devices=["2FF82A9EE01612D6547B4B068B80E73B"];
+
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initialize AdMob
   await MobileAds.instance.initialize();
 
+  // Set the tag for child-directed treatment
+  RequestConfiguration configuration = RequestConfiguration(
+    tagForChildDirectedTreatment: TagForChildDirectedTreatment.yes,
+    maxAdContentRating: MaxAdContentRating.g,
+  );
+  MobileAds.instance.updateRequestConfiguration(configuration);
+
+  // Initialize CacheHelper
   await CacheHelper.init();
+
   if (CacheHelper.getData(key: 'idAr') != null) {
     idAr = CacheHelper.getData(key: 'idAr');
   }

@@ -1,5 +1,5 @@
 class AdHelper {
-  static const bool _testMode = true;
+  static const bool _testMode = false;
 
   static String get bannerAdUnitId {
     if (_testMode) {
