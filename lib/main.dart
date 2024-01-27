@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages, prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
@@ -9,7 +11,6 @@ import 'package:test1/screen/splach/splash_screen.dart';
 import 'generated/l10n.dart';
 
 void main() async {
-
   WidgetsFlutterBinding.ensureInitialized();
 
   // Initialize AdMob
@@ -32,8 +33,6 @@ void main() async {
     idEn = CacheHelper.getData(key: 'idEn');
   }
 
-  print('11111111111111111111');
-  print(idAr);
   runApp(const MyApp());
 }
 

@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -16,7 +14,7 @@ class AdBannerModels extends StatefulWidget {
 class _AdBannerModelsState extends State<AdBannerModels> {
   late BannerAd bannerAd;
   bool _isAdReady = false;
-  final AdSize _adSize = AdSize.banner;
+  final AdSize _adSize = AdSize.fullBanner;
 
   void _createBannerAd() {
     bannerAd = BannerAd(
@@ -36,7 +34,6 @@ class _AdBannerModelsState extends State<AdBannerModels> {
   @override
   void initState() {
     super.initState();
-
     _createBannerAd();
   }
 
@@ -56,6 +53,6 @@ class _AdBannerModelsState extends State<AdBannerModels> {
         // alignment: Alignment.center,
       );
     }
-    return SizedBox();
+    return Container();
   }
 }

@@ -6,7 +6,7 @@ class AdHelper {
       return 'ca-app-pub-3940256099942544/6300978111';
     }
 
-    return 'ca-app-pub-3027891125673377/7694508835';
+    return 'ca-app-pub-3027891125673377/1706852778';
   }
 
   static String get viewAd {
@@ -22,6 +22,6 @@ class AdHelper {
       return 'ca-app-pub-3940256099942544/1033173712';
     }
 
-    return 'ca-app-pub-3027891125673377/5229704005';
+    return 'ca-app-pub-3027891125673377/5753908993';
   }
 }

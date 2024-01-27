@@ -26,6 +26,7 @@ class _IslamScreenState extends State<IslamScreen> {
         backgroundColor: colors4,
       ),
       body: BodyIslamScreen(),
+      // bottomNavigationBar: const AdBannerModels(),
     );
   }
 }

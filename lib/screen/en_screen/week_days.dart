@@ -68,6 +68,7 @@ class _WeekDaysScreenState extends State<WeekDaysScreen> {
           ),
         ],
       ),
+      // bottomNavigationBar: const AdBannerModels(),
     );
   }
 
