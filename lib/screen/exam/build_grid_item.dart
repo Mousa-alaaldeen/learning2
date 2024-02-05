@@ -38,7 +38,6 @@ List<Widget> buildGridItems(context) {
 }
 
 Widget buildGridItem(int index, context) {
-  double w = MediaQuery.of(context).size.width;
   return InkWell(
     onTap: () {
       Navigator.push(
@@ -48,13 +47,14 @@ Widget buildGridItem(int index, context) {
         ),
       );
     },
-    child: Container(
-      margin: EdgeInsets.only(bottom: w / 30, left: w / 60, right: w / 60),
-      height: 300,
-      child: Image.asset(
-        imageAndTextExam[index],
-        width: MediaQuery.of(context).size.width,
-        fit: BoxFit.fill,
+    child: Card(
+      child: SizedBox(
+        height: 300,
+        child: Image.asset(
+          imageAndTextExam[index],
+          width: MediaQuery.of(context).size.width,
+          fit: BoxFit.fill,
+        ),
       ),
     ),
   );

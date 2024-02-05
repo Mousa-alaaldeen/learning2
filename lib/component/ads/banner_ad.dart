@@ -25,7 +25,7 @@ class _AdBannerModelsState extends State<AdBannerModels> {
             _isAdReady = true;
           });
         }, onAdFailedToLoad: (ad, error) {
-          log('ad failed to load : ${error.message}');
+          log('ad failed to load : ${error?.message ?? "Unknown error"}');
         }),
         request: const AdRequest());
     bannerAd.load();
@@ -50,7 +50,6 @@ class _AdBannerModelsState extends State<AdBannerModels> {
         width: _adSize.width.toDouble(),
         height: _adSize.height.toDouble(),
         child: AdWidget(ad: bannerAd),
-        // alignment: Alignment.center,
       );
     }
     return Container();

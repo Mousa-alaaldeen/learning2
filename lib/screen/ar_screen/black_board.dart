@@ -225,13 +225,10 @@ class _MyHomePageState extends State<DrawingScreen> {
     );
   }
 
-  /// 添加Json测试内容
   void _addTestLine() {
     _drawingController.addContent(StraightLine.fromJson(_testLine1));
     _drawingController
         .addContents(<PaintContent>[StraightLine.fromJson(_testLine2)]);
-    // _drawingController.addContent(SimpleLine.fromJson(tData[0]));
-    // _drawingController.addContent(Eraser.fromJson(tData[1]));
   }
 
   @override
@@ -297,7 +294,7 @@ class _MyHomePageState extends State<DrawingScreen> {
                       if (itemCount != 27) {
                         itemCount++;
                       }
-                      if(itemCount==3){
+                      if (itemCount == 3) {
                         Ads().showAd();
                       }
 

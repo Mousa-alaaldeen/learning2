@@ -22,7 +22,7 @@ class _EnScreenState extends State<EnScreen> {
           'تعلم باللغه الإنجليزيه',
           style: Styles.textStyle25,
         ),
-        backgroundColor: colors2,
+        backgroundColor: colors4,
       ),
       body: BodyEnScreen(),
     );

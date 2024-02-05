@@ -6,6 +6,8 @@ import 'package:test1/component/styles.dart';
 
 import 'package:test1/screen/islam/body_islam_screen.dart';
 
+
+
 class IslamScreen extends StatefulWidget {
   const IslamScreen({Key? key}) : super(key: key);
 

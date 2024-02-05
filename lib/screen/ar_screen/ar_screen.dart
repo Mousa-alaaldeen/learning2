@@ -7,6 +7,7 @@ import 'package:test1/component/widget/item_small.dart';
 import 'package:test1/screen/ar_screen/black_board.dart';
 import 'package:test1/screen/ar_screen/letter_screen.dart';
 import 'package:test1/screen/ar_screen/number_screen.dart';
+import 'package:test1/screen/ar_screen/senses_screen.dart';
 
 class ArScreen extends StatefulWidget {
   const ArScreen({Key? key}) : super(key: key);
@@ -59,19 +60,37 @@ class _ArScreenState extends State<ArScreen> {
               ),
             ),
             SliverToBoxAdapter(
-              child: ItemSmall(
-                onTap: () {
-                  Ads().showAd();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const DrawingScreen(),
-                    ),
-                  );
-                },
-                color: colors3,
-                text: 'كتابة الحروف العربيه',
-                images: AppImages.education,
+              child: Row(
+                children: [
+                  ItemSmall(
+                    onTap: () {
+                      Ads().showAd();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DrawingScreen(),
+                        ),
+                      );
+                    },
+                    color: colors3,
+                    text: 'كتابة الحروف العربيه',
+                    images: AppImages.education,
+                  ),
+                  ItemSmall(
+                    onTap: () {
+                      Ads().showAd();
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SensesScreen(),
+                        ),
+                      );
+                    },
+                    color: colors4,
+                    text:  "الحواس الخمس",
+                    images: AppImages.senses,
+                  ),
+                ],
               ),
             ),
           ],

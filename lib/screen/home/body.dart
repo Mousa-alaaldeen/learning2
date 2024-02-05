@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:test1/component/ads/interstitial_ad.dart';
-
 import 'package:test1/component/app_images.dart';
 import 'package:test1/component/components.dart';
 import 'package:test1/component/widget/item_small.dart';
@@ -14,8 +12,8 @@ import 'package:test1/screen/islam/islam_screen.dart';
 
 class BodyScreen extends StatelessWidget {
   const BodyScreen({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +30,7 @@ class BodyScreen extends StatelessWidget {
                   ),
                 ),
                 color: colors1,
-                text: 'تعلم باللغه العربيه',
+                text: 'تعلم اللغة العربية',
                 images: AppImages.LETTER_AR,
               ),
               ItemSmall(
@@ -45,8 +43,8 @@ class BodyScreen extends StatelessWidget {
                   );
                 },
                 color: colors2,
+                text: 'تعلم اللغة الإنجليزية',
                 images: AppImages.LETTER_EN,
-                text: 'تعلم باللغة الإنجليزية',
               ),
             ],
           ),
@@ -63,9 +61,8 @@ class BodyScreen extends StatelessWidget {
               );
             },
             color: colors5,
-            text: 'اصوات الحيوانات',
+            text: 'أصوات الحيوانات',
             images: AppImages.ANIMALS,
-            text2: '',
           ),
         ),
         SliverToBoxAdapter(
@@ -79,7 +76,7 @@ class BodyScreen extends StatelessWidget {
                   ),
                 ),
                 color: colors3,
-                text: 'تعلم الالوان',
+                text: 'تعلم الألوان',
                 images: AppImages.color,
               ),
               ItemSmall(
@@ -90,7 +87,7 @@ class BodyScreen extends StatelessWidget {
                   ),
                 ),
                 color: colors4,
-                text: 'تعلم الدين الاسلامي',
+                text: 'تعلم الدين الإسلامي',
                 images: AppImages.muslem,
               ),
             ],
@@ -102,7 +99,6 @@ class BodyScreen extends StatelessWidget {
             child: ItemSmall(
               onTap: () {
                 Ads().showAd();
-
                 Navigator.push(
                   context,
                   MaterialPageRoute(

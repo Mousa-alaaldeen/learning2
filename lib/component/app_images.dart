@@ -60,6 +60,20 @@ class AppImages {
   static const String nine =
       'assets/images/numbers/number_nine-removebg-preview.png';
   static const String ten = 'assets/images/numbers/ten.png';
+
+  //writing number
+
+  static const String writingOne = 'assets/images/numbers/1.jpeg';
+  static const String WritingTow = 'assets/images/numbers/2.jpeg';
+  static const String WritingThree = 'assets/images/numbers/3.jpeg';
+  static const String WritingFour = 'assets/images/numbers/4.jpeg';
+  static const String WritingFive = 'assets/images/numbers/5.jpeg';
+  static const String WritingSix = 'assets/images/numbers/6.jpeg';
+  static const String WritingSeven = 'assets/images/numbers/7.jpeg';
+  static const String WritingEigth = 'assets/images/numbers/8.jpeg';
+  static const String WritingNine = 'assets/images/numbers/9.jpeg';
+  static const String WritingTen = 'assets/images/numbers/10.jpeg';
+
   static const String blackboard = 'assets/images/bl.jpg';
   static const String education = 'assets/images/black.jpg';
 
@@ -167,10 +181,41 @@ class AppImages {
   static const String en24 = 'assets/images/letter_en/24.jpeg';
   static const String en25 = 'assets/images/letter_en/25.jpeg';
   static const String en26 = 'assets/images/letter_en/26.jpeg';
+
+//border
+  static const writingLetterEn = "assets/images/letter_en/writing.png";
+  static const writingNumberEn = "assets/images/letter_en/wnumber.png";
+  static const String b1 = 'assets/images/letter_en/b1.jpeg';
+  static const String b2 = 'assets/images/letter_en/b2.jpeg';
+  static const String b3 = 'assets/images/letter_en/b3.jpeg';
+  static const String b4 = 'assets/images/letter_en/b4.jpeg';
+  static const String b5 = 'assets/images/letter_en/b5.jpeg';
+  static const String b6 = 'assets/images/letter_en/b6.jpeg';
+  static const String b7 = 'assets/images/letter_en/b7.jpeg';
+  static const String b8 = 'assets/images/letter_en/b8.jpeg';
+  static const String b9 = 'assets/images/letter_en/b9.jpeg';
+  static const String b10 = 'assets/images/letter_en/b10.jpeg';
+  static const String b11 = 'assets/images/letter_en/b11.jpeg';
+  static const String b12 = 'assets/images/letter_en/b12.jpeg';
+  static const String b13 = 'assets/images/letter_en/b13.jpeg';
+  static const String b14 = 'assets/images/letter_en/b14.jpeg';
+  static const String b15 = 'assets/images/letter_en/b15.jpeg';
+  static const String b16 = 'assets/images/letter_en/b16.jpeg';
+  static const String b17 = 'assets/images/letter_en/b17.jpeg';
+  static const String b18 = 'assets/images/letter_en/b18.jpeg';
+  static const String b19 = 'assets/images/letter_en/b19.jpeg';
+  static const String b20 = 'assets/images/letter_en/b20.jpeg';
+  static const String b21 = 'assets/images/letter_en/b21.jpeg';
+  static const String b22 = 'assets/images/letter_en/b22.jpeg';
+  static const String b23 = 'assets/images/letter_en/b23.jpeg';
+  static const String b24 = 'assets/images/letter_en/b24.jpeg';
+  static const String b25 = 'assets/images/letter_en/b25.jpeg';
+  static const String b26 = 'assets/images/letter_en/b26.jpeg';
+
 //exam
   static const String examAr1 = 'assets/images/exam/exam10ar.png';
   static const String examNumberAr = 'assets/images/exam/number_ar.jpg';
-  static const String examNumberEn = 'assets/images/exam/numberEn.jpg';
+  static const String examNumberEn = 'assets/images/exam/numberEn.png';
   static const String letterAr10 = 'assets/images/exam/letterAr10.png';
   static const String letterAr20 = 'assets/images/exam/letterAr20.jpg';
   static const String letterAr30 = 'assets/images/exam/letterAr30.jpg';
@@ -181,6 +226,9 @@ class AppImages {
   static const String letterEn30 = 'assets/images/exam/letterEn30.jpg';
   static const String book = 'assets/images/to.jpg';
   static const String boy = 'assets/images/tesst-removebg-preview.png';
+  static const String senses = 'assets/images/senses.png';
+  static const String sensesEn = 'assets/images/senses_en.png';
+
   static const String PillarsOfIslam = 'assets/images/PillarsOfIslam.png';
   static const String tashahhud = 'assets/images/tashahhud.png';
   static const String azan = 'assets/images/azan.png';

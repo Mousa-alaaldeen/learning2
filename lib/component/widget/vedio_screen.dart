@@ -50,32 +50,25 @@ class _VedioScreenState extends State<VedioScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
-        child: Stack(
+        child: Column(
           children: [
-            Column(
-              children: [
-                Center(
-                  child: SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.3,
-                    child: Stack(
-                      children: [
-                        CustomVideoPlayer(
-                          customVideoPlayerController:
-                              _customVideoPlayerController,
-                        ),
-                      ],
-                    ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.3,
+              child: Stack(
+                children: [
+                  CustomVideoPlayer(
+                    customVideoPlayerController: _customVideoPlayerController,
                   ),
-                ),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.6,
-                  child: Image.asset(
-                    widget.text,
-                    fit: BoxFit.contain,
-                  ),
-                ),
-              ],
+                ],
+              ),
+            ),
+            SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.6,
+              child: Image.asset(
+                widget.text,
+                fit: BoxFit.contain,
+              ),
             ),
           ],
         ),

@@ -4,6 +4,37 @@ import 'package:test1/models/animal_model.dart';
 import 'package:test1/models/number_model.dart';
 
 
+final List<NumberModel> borderLetter = [
+    NumberModel(AppOudio.en1, AppImages.b1, 'A', 'Banana'),
+    NumberModel(AppOudio.en2, AppImages.b2, 'B', 'Banana'),
+    NumberModel(AppOudio.en3, AppImages.b3, 'C', 'Cherry'),
+    NumberModel(AppOudio.en4, AppImages.b4, 'D', 'Date'),
+    NumberModel(AppOudio.en5, AppImages.b5, 'E', 'Eggplant'),
+    NumberModel(AppOudio.en6, AppImages.b6, 'F', 'Fig'),
+    NumberModel(AppOudio.en7, AppImages.b7, 'G', 'Grapes'),
+    NumberModel(AppOudio.en8, AppImages.b8, 'H', 'Honeydew'),
+    NumberModel(AppOudio.en9, AppImages.b9, 'I', 'Ice Cream'),
+    NumberModel(AppOudio.en10, AppImages.b10, 'J', 'Jellyfish'),
+    NumberModel(AppOudio.en11, AppImages.b11, 'K', 'Kiwi'),
+    NumberModel(AppOudio.en12, AppImages.b12, 'L', 'Lemon'),
+    NumberModel(AppOudio.en13, AppImages.b13, 'M', 'Mango'),
+    NumberModel(AppOudio.en14, AppImages.b14, 'N', 'Nectarine'),
+    NumberModel(AppOudio.en15, AppImages.b15, 'O', 'Orange'),
+    NumberModel(AppOudio.en16, AppImages.b16, 'P', 'Peach'),
+    NumberModel(AppOudio.en17, AppImages.b17, 'Q', 'Quince'),
+    NumberModel(AppOudio.en18, AppImages.b18, 'R', 'Raspberry'),
+    NumberModel(AppOudio.en19, AppImages.b19, 'S', 'Strawberry'),
+    NumberModel(AppOudio.en20, AppImages.b20, 'T', 'Tomato'),
+    NumberModel(AppOudio.en21, AppImages.b21, 'U', 'Umbrella'),
+    NumberModel(AppOudio.en22, AppImages.b22, 'V', 'Vanilla'),
+    NumberModel(AppOudio.en23, AppImages.b23, 'W', 'Watermelon'),
+    NumberModel(AppOudio.en24, AppImages.b24, 'X', 'X-ray'),
+    NumberModel(AppOudio.en25, AppImages.b25, 'Y', 'Yogurt'),
+    NumberModel(AppOudio.en26, AppImages.b26, 'Z', 'Zucchini'),
+  ];
+
+
+
 final List<NumberModel> letter = [
     NumberModel(AppOudio.en1, AppImages.en1, 'A', 'Banana'),
     NumberModel(AppOudio.en2, AppImages.en2, 'B', 'Banana'),
@@ -45,6 +76,23 @@ final List<NumberModel> numbers = [
     NumberModel(AppOudio.NINE_en, AppImages.nine, '9', 'nine'),
     NumberModel(AppOudio.TEN_en, AppImages.ten, '10', 'ten'),
   ];
+
+
+
+
+final List<NumberModel> writingNumbersEn = [
+    NumberModel(AppOudio.ONE_en, AppImages.writingOne, '1', 'one'),
+    NumberModel(AppOudio.TOW_en, AppImages.WritingTow, '2', 'two'),
+    NumberModel(AppOudio.THREE_en, AppImages.WritingThree, '3', 'three'),
+    NumberModel(AppOudio.FOUR_en, AppImages.WritingFour, '4', 'four'),
+    NumberModel(AppOudio.FIVE_en, AppImages.WritingFive, '5', 'five'),
+    NumberModel(AppOudio.SIX_en, AppImages.WritingSix, '6', 'six'),
+    NumberModel(AppOudio.SEVEN_en, AppImages.WritingSeven, '7', 'seven'),
+    NumberModel(AppOudio.EIGTH_en, AppImages.WritingEigth, '8', 'eight'),
+    NumberModel(AppOudio.NINE_en, AppImages.WritingNine, '9', 'nine'),
+    NumberModel(AppOudio.TEN_en, AppImages.WritingTen, '10', 'ten'),
+  ];
+
    final List<AnimalModel> animalsList = [
     AnimalModel(
         imagePath: AppImages.bird_oudio,

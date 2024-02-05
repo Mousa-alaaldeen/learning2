@@ -26,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: const AdBannerModels(),
     );
   }
 }

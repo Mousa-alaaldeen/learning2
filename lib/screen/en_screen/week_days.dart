@@ -1,5 +1,6 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
+
 import 'package:test1/component/app_audio.dart';
 import 'package:test1/component/app_images.dart';
 import 'package:test1/component/components.dart';
@@ -15,11 +16,6 @@ class WeekDaysScreen extends StatefulWidget {
 class _WeekDaysScreenState extends State<WeekDaysScreen> {
   final player = AudioPlayer();
   bool isPlayer = false;
-  // @override
-  // void initState() {
-  //   super.initState;
-  //   playWelcomeSound();
-  // }
 
   void playWelcomeSound() async {
     await player.play(AssetSource(AppOudio.weekDays));
@@ -68,7 +64,6 @@ class _WeekDaysScreenState extends State<WeekDaysScreen> {
           ),
         ],
       ),
-      // bottomNavigationBar: const AdBannerModels(),
     );
   }
 
