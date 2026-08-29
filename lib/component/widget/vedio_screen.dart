@@ -1,7 +1,5 @@
-// ignore_for_file: deprecated_member_use
-
-import 'package:appinio_video_player/appinio_video_player.dart';
 import 'package:flutter/material.dart';
+import 'package:video_player/video_player.dart';
 
 class VedioScreen extends StatefulWidget {
   final String url;
@@ -18,30 +16,23 @@ class VedioScreen extends StatefulWidget {
 }
 
 class _VedioScreenState extends State<VedioScreen> {
-  late VideoPlayerController _videoPlayerController;
-
-  late CustomVideoPlayerController _customVideoPlayerController;
-
-  final CustomVideoPlayerSettings _customVideoPlayerSettings =
-      const CustomVideoPlayerSettings(showSeekButtons: true);
+  late VideoPlayerController _videoController;
 
   @override
   void initState() {
     super.initState();
 
-    _videoPlayerController = VideoPlayerController.asset(widget.url)
-      ..initialize().then((value) => setState(() {}));
-
-    _customVideoPlayerController = CustomVideoPlayerController(
-      context: context,
-      videoPlayerController: _videoPlayerController,
-      customVideoPlayerSettings: _customVideoPlayerSettings,
-    );
+    _videoController = VideoPlayerController.asset(widget.url)
+      ..initialize().then((_) {
+        if (mounted) {
+          setState(() {});
+        }
+      });
   }
 
   @override
   void dispose() {
-    _customVideoPlayerController.dispose();
+    _videoController.dispose();
     super.dispose();
   }
 
@@ -54,16 +45,18 @@ class _VedioScreenState extends State<VedioScreen> {
           children: [
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.3,
-              child: Stack(
-                children: [
-                  CustomVideoPlayer(
-                    customVideoPlayerController: _customVideoPlayerController,
-                  ),
-                ],
-              ),
+              width: double.infinity,
+              child: _videoController.value.isInitialized
+                  ? AspectRatio(
+                      aspectRatio: _videoController.value.aspectRatio,
+                      child: VideoPlayer(_videoController),
+                    )
+                  : const Center(
+                      child: CircularProgressIndicator(),
+                    ),
             ),
             SizedBox(
-              width: MediaQuery.of(context).size.width,
+              width: double.infinity,
               height: MediaQuery.of(context).size.height * 0.6,
               child: Image.asset(
                 widget.text,

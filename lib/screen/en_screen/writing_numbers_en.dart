@@ -225,30 +225,14 @@ class _MyHomePageState extends State<WritingNumbersEn> {
                   boardPanEnabled: false,
                   boardScaleEnabled: false,
                   controller: _drawingController,
-                  showDefaultActions: true,
-                  // showDefaultTools: true,
-
                   background: SizedBox(
                     width: constraints.maxWidth,
                     height: constraints.maxHeight,
                     child: Image.asset(
-                      writingNumbersEn[itemCount].images,
-                      // fit: BoxFit.fill,
+                      borderLetter[itemCount].images,
+                      fit: BoxFit.contain,
                     ),
                   ),
-
-                  defaultToolsBuilder: (Type t, _) {
-                    return DrawingBoard.defaultTools(t, _drawingController)
-                      ..insert(
-                        1,
-                        DefToolItem(
-                          icon: Icons.change_history_rounded,
-                          isActive: t == Triangle,
-                          onTap: () =>
-                              _drawingController.setPaintContent(Triangle()),
-                        ),
-                      );
-                  },
                 );
               },
             ),
