@@ -1,15 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:test1/screen/home/body.dart';
+import 'package:get/get.dart';
+import 'package:test1/features/home/controllers/home_controller.dart' show HomeController;
 
-class HomeScreen extends StatelessWidget {
-const HomeScreen({super.key});
+import '../../../core/theme/app_colors.dart';
+import '../../features/home/widgets/home_body.dart';
 
-@override
-Widget build(BuildContext context) {
-return const Scaffold(
-body: SafeArea(
-child: BodyScreen(),
-),
-);
-}
+
+class HomeScreen extends GetView<HomeController> {
+  const HomeScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.background,
+      body: SafeArea(
+        child: HomeBody(controller: controller),
+      ),
+    );
+  }
 }

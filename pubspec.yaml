@@ -35,6 +35,11 @@ dependencies:
   archive: ^3.6.1
   video_player: ^2.11.1
   get: ^4.7.3
+  font_awesome_flutter: ^10.5.0
+  rive_animated_icon: ^2.1.1
+  flutter_staggered_animations_plus: ^1.0.2
+  flutter_animate: ^4.5.2
+  flutter_confetti_engine: ^1.0.8
 
 dev_dependencies:
   flutter_test:
@@ -89,3 +94,6 @@ flutter:
       fonts:
         - asset: assets/fonts/Roboto.ttf
           weight: 700
+    - family: IconBroken
+      fonts:
+        - asset: assets\fonts\icons.ttf

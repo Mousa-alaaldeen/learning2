@@ -8,9 +8,11 @@ import 'package:test1/screen/en_screen/en_screen.dart';
 import 'package:test1/screen/exam/exam_layout.dart';
 import 'package:test1/screen/islam/islam_screen.dart';
 
+import '../../../app/routes/app_routes.dart';
+
 class HomeController extends GetxController {
   void openArabic() {
-    Get.to(() => const ArScreen());
+  Get.toNamed(AppRoutes.arabic);
   }
 
   void openEnglish() {

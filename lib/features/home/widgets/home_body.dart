@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:test1/features/home/widgets/home_header.dart';
+import 'package:test1/features/arabic/widgets/arabic_card.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../controllers/home_controller.dart';
-import 'home_card.dart';
 
 class HomeBody extends StatelessWidget {
   const HomeBody({
@@ -24,50 +25,55 @@ class HomeBody extends StatelessWidget {
             child: HomeHeader(),
           ),
           SliverPadding(
-            padding: const EdgeInsets.fromLTRB(16, 8, 16, 32),
+            padding: const EdgeInsets.fromLTRB(
+              16,
+              8,
+              16,
+              32,
+            ),
             sliver: SliverGrid(
               delegate: SliverChildListDelegate(
                 [
-                  HomeCard(
+                  ArabicCard(
                     title: 'اللغة العربية',
                     subtitle: 'الحروف والأرقام',
                     icon: Icons.menu_book_rounded,
-                    color: AppColors.arabic,
+                    color: AppColors.arabicWriting,
                     onTap: controller.openArabic,
                   ),
-                  HomeCard(
+                  ArabicCard(
                     title: 'اللغة الإنجليزية',
                     subtitle: 'Learn English',
                     icon: Icons.language_rounded,
-                    color: AppColors.english,
+                    color: AppColors.lettersPrimary,
                     onTap: controller.openEnglish,
                   ),
-                  HomeCard(
+                  ArabicCard(
                     title: 'أصوات الحيوانات',
                     subtitle: 'تعرف على الحيوانات',
                     icon: Icons.pets_rounded,
-                    color: AppColors.animals,
+                    color: AppColors.lettersBlue,
                     onTap: controller.openAnimals,
                   ),
-                  HomeCard(
+                  ArabicCard(
                     title: 'تعلم الألوان',
                     subtitle: 'اكتشف الألوان',
                     icon: Icons.palette_rounded,
-                    color: AppColors.colors,
+                    color: AppColors.numbersGreen,
                     onTap: controller.openColors,
                   ),
-                  HomeCard(
+                  ArabicCard(
                     title: 'التربية الإسلامية',
                     subtitle: 'تعلم دينك',
                     icon: Icons.mosque_rounded,
-                    color: AppColors.islam,
+                    color: AppColors.numbersDecorationPurple,
                     onTap: controller.openIslam,
                   ),
-                  HomeCard(
+                  ArabicCard(
                     title: 'الاختبارات',
                     subtitle: 'اختبر معلوماتك',
                     icon: Icons.quiz_rounded,
-                    color: AppColors.exams,
+                    color: AppColors.numbersRed,
                     onTap: controller.openExams,
                   ),
                 ],
