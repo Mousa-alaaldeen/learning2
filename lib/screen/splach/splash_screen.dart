@@ -1,28 +1,31 @@
-// ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api, prefer_const_constructors
-
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-
 import 'package:lottie/lottie.dart';
+
 import 'package:test1/component/app_images.dart';
-import 'package:test1/screen/welcome_screen/welcom_screen.dart';
+import 'package:test1/screen/welcome/welcome_screen.dart';
 
 class SplashScreen extends StatefulWidget {
+  const SplashScreen({super.key});
+
   @override
-  _SplashScreenState createState() => _SplashScreenState();
+  State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    Timer(
-      Duration(seconds: 2),
-      () => Navigator.of(context).pushReplacement(
-        MaterialPageRoute(
-          builder: (BuildContext context) => WelcomScreen(),
-        ),
+    _navigateToWelcome();
+  }
+
+  Future<void> _navigateToWelcome() async {
+    await Future.delayed(const Duration(seconds: 2));
+
+    if (!mounted) return;
+
+    Navigator.of(context).pushReplacement(
+      MaterialPageRoute(
+        builder: (_) =>  WelcomeScreen(),
       ),
     );
   }
@@ -30,11 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Align(
+      body: Center(
         child: Lottie.asset(
           AppImages.LOTTIE,
-          height: MediaQuery.of(context).size.height * .5,
-          fit: BoxFit.cover,
+          height: MediaQuery.sizeOf(context).height * 0.5,
+          fit: BoxFit.contain,
         ),
       ),
     );
