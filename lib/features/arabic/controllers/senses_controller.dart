@@ -36,10 +36,8 @@ class SensesController extends GetxController {
   final totalStars = 0.obs;
   final isSpeaking = false.obs;
 
-  /// الخيار الذي يتم شرحه حالياً
   final highlightedOptionIndex = (-1).obs;
 
-  /// أثناء الشرح لا يستطيع الطفل الضغط
   final isTeaching = true.obs;
 
   final List<SenseItem> senses = const [
@@ -139,9 +137,9 @@ class SensesController extends GetxController {
         color: Color(0xFFE99B27),
       ),
       SenseOption(
-        name: 'بطيخ',
-        icon: Icons.water_damage_rounded,
-        color: Color(0xFFE95D6F),
+        name: 'صابون',
+        icon: Icons.soap_rounded,
+        color: Color(0xFF54BFEA),
       ),
     ],
     [
@@ -151,13 +149,13 @@ class SensesController extends GetxController {
         color: Color(0xFF55BDEB),
       ),
       SenseOption(
-        name: 'ريشة',
-        icon: Icons.flight_rounded,
+        name: 'قطن',
+        icon: Icons.cloud_rounded,
         color: Color(0xFF9A72E9),
       ),
       SenseOption(
-        name: 'حجر',
-        icon: Icons.circle_rounded,
+        name: 'صخرة',
+        icon: Icons.terrain_rounded,
         color: Color(0xFF777777),
       ),
     ],
@@ -167,8 +165,7 @@ class SensesController extends GetxController {
 
   SenseItem get currentSense => senses[currentIndex.value];
 
-  List<SenseOption> get optionsForCurrent =>
-      options[currentIndex.value];
+  List<SenseOption> get optionsForCurrent => options[currentIndex.value];
 
   String get questionForCurrent {
     switch (currentIndex.value) {
@@ -194,11 +191,9 @@ class SensesController extends GetxController {
 
   bool get isFirst => currentIndex.value == 0;
 
-  bool get isLast =>
-      currentIndex.value == senses.length - 1;
+  bool get isLast => currentIndex.value == senses.length - 1;
 
-  double get progress =>
-      (currentIndex.value + 1) / senses.length;
+  double get progress => (currentIndex.value + 1) / senses.length;
 
   @override
   void onInit() {
@@ -257,23 +252,13 @@ class SensesController extends GetxController {
   }
 
   // ==========================================================
-  // التعليم
-  //
-  // 1. الحاسة واستخدامها
-  // 2. السؤال
-  // 3. الخيارات واحد واحد
-  // 4. السماح بالإجابة
-  // ==========================================================
 
   Future<void> teachCurrent() async {
     isTeaching.value = true;
     highlightedOptionIndex.value = -1;
 
-    // إيقاف أي كلام سابق
     await _tts.stop();
 
-    // ========================================================
-    // 1. قراءة الحاسة واستخدامها
     // ========================================================
 
     await _speak(
@@ -284,8 +269,6 @@ class SensesController extends GetxController {
       const Duration(milliseconds: 450),
     );
 
-    // ========================================================
-    // 2. قراءة السؤال
     // ========================================================
 
     await _speak(
@@ -297,26 +280,20 @@ class SensesController extends GetxController {
     );
 
     // ========================================================
-    // 3. قراءة الخيارات واحد واحد
-    // ========================================================
 
     final currentOptions = optionsForCurrent;
 
     for (int i = 0; i < currentOptions.length; i++) {
-      // إضاءة الخيار
       highlightedOptionIndex.value = i;
 
-      // قراءة اسم الخيار وانتظار انتهاء النطق
       await _speak(
         currentOptions[i].name,
       );
 
-      // وقت بسيط قبل الخيار التالي
       await Future.delayed(
         const Duration(milliseconds: 500),
       );
 
-      // إلغاء الإضاءة قبل الانتقال
       highlightedOptionIndex.value = -1;
 
       await Future.delayed(
@@ -325,17 +302,11 @@ class SensesController extends GetxController {
     }
 
     // ========================================================
-    // 4. انتهى الشرح
-    // ========================================================
 
     highlightedOptionIndex.value = -1;
 
     isTeaching.value = false;
   }
-
-  // ==========================================================
-  // زر الصوت
-  // ==========================================================
 
   Future<void> speakCurrent() async {
     await _tts.stop();
@@ -346,9 +317,6 @@ class SensesController extends GetxController {
   }
 
   // ==========================================================
-  // اختيار الحاسة
-  // ==========================================================
-
   void selectSense(int index) {
     if (index < 0 || index >= senses.length) {
       return;
@@ -359,8 +327,6 @@ class SensesController extends GetxController {
     teachCurrent();
   }
 
-  // ==========================================================
-  // التالي
   // ==========================================================
 
   void nextSense() {
@@ -384,20 +350,16 @@ class SensesController extends GetxController {
   }
 
   // ==========================================================
-  // فحص الإجابة
-  // ==========================================================
 
   Future<void> checkAnswer(
     int index,
     BuildContext context,
   ) async {
-    // ممنوع الإجابة أثناء الشرح
     if (isTeaching.value) {
       return;
     }
 
-    final correct =
-        index == correctAnswers[currentIndex.value];
+    final correct = index == correctAnswers[currentIndex.value];
 
     // ========================================================
     // إجابة خاطئة
@@ -413,8 +375,6 @@ class SensesController extends GetxController {
       return;
     }
 
-    // ========================================================
-    // إجابة صحيحة
     // ========================================================
 
     totalStars.value++;
@@ -434,8 +394,6 @@ class SensesController extends GetxController {
     );
 
     // ========================================================
-    // آخر سؤال
-    // ========================================================
 
     if (isLast) {
       Future.delayed(
@@ -447,8 +405,6 @@ class SensesController extends GetxController {
     }
 
     // ========================================================
-    // السؤال التالي
-    // ========================================================
 
     Future.delayed(
       const Duration(milliseconds: 900),
@@ -457,9 +413,6 @@ class SensesController extends GetxController {
   }
 
   // ==========================================================
-  // نهاية اللعبة
-  // ==========================================================
-
   void _showFinishedDialog(
     BuildContext context,
   ) {
@@ -478,9 +431,7 @@ class SensesController extends GetxController {
                 size: 90,
                 color: Color(0xFFFFB52E),
               ),
-
               const SizedBox(height: 12),
-
               const Text(
                 'مبروك! 🎉',
                 style: TextStyle(
@@ -489,9 +440,7 @@ class SensesController extends GetxController {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-
               const SizedBox(height: 8),
-
               const Text(
                 'أصبحت خبير الحواس!',
                 textAlign: TextAlign.center,
@@ -500,9 +449,7 @@ class SensesController extends GetxController {
                   fontSize: 21,
                 ),
               ),
-
               const SizedBox(height: 15),
-
               Obx(
                 () => Text(
                   '⭐ ${totalStars.value} نجوم',
@@ -513,9 +460,7 @@ class SensesController extends GetxController {
                   ),
                 ),
               ),
-
               const SizedBox(height: 22),
-
               ElevatedButton(
                 onPressed: () {
                   Get.back();

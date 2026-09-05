@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../../core/theme/app_colors.dart';
 import '../controllers/arabic_controller.dart';
-import '../widgets/arabic_card.dart';
+import '../../../core/widgets/common/learning_category_card.dart';
 
 class ArabicScreen extends GetView<ArabicController> {
   const ArabicScreen({super.key});
@@ -41,7 +41,7 @@ class ArabicScreen extends GetView<ArabicController> {
           // NUMBERS
           // ==================================================
 
-          ArabicCard(
+          LearningCategoryCard(
             title: 'الأرقام العربية',
             subtitle: 'واحد، اثنان، ثلاثة...',
             icon: Icons.pin_rounded,
@@ -53,7 +53,7 @@ class ArabicScreen extends GetView<ArabicController> {
           // LETTERS
           // ==================================================
 
-          ArabicCard(
+          LearningCategoryCard(
             title: 'الحروف العربية',
             subtitle: 'أ، ب، ت، ث...',
             icon: Icons.translate_rounded,
@@ -65,7 +65,7 @@ class ArabicScreen extends GetView<ArabicController> {
           // WRITING
           // ==================================================
 
-          ArabicCard(
+          LearningCategoryCard(
             title: 'كتابة الحروف',
             subtitle: 'تدرب واكتب بنفسك',
             icon: Icons.edit_rounded,
@@ -77,7 +77,7 @@ class ArabicScreen extends GetView<ArabicController> {
           // SENSES
           // ==================================================
 
-          ArabicCard(
+          LearningCategoryCard(
             title: 'الحواس الخمس',
             subtitle: 'البصر، السمع، الشم...',
             icon: Icons.visibility_rounded,

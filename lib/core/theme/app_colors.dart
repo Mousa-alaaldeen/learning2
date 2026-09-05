@@ -114,7 +114,7 @@ abstract final class AppColors {
   static const numbersDecorationAmber = Colors.amber;
   static const numbersDecorationOrange = Colors.orange;
   static const numbersDecorationPurple = Colors.purple;
-    // ============================================================
+  // ============================================================
   // ARABIC SENSES
   // ============================================================
 
@@ -124,4 +124,7 @@ abstract final class AppColors {
 
   static const sensesBackgroundCircleBlue = Color(0xFFBEEAFF);
   static const sensesBackgroundCirclePurple = Color(0xFFE0C8FF);
+
+  static const sensesBlue = Color(0xFF35A9F0);
+  static const sensesBackgroundBottom = Color(0xFFEDE7FF);
 }

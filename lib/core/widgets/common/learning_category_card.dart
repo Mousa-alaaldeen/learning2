@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-
-class ArabicCard extends StatelessWidget {
-  const ArabicCard({
+class LearningCategoryCard extends StatelessWidget {
+  const LearningCategoryCard({
     super.key,
     required this.title,
     required this.subtitle,
     required this.icon,
     required this.color,
     required this.onTap,
+    this.startText = 'ابدأ',
   });
 
   final String title;
@@ -16,6 +16,7 @@ class ArabicCard extends StatelessWidget {
   final IconData icon;
   final Color color;
   final VoidCallback onTap;
+  final String startText;
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,6 @@ class ArabicCard extends StatelessWidget {
         child: Stack(
           clipBehavior: Clip.hardEdge,
           children: [
-            // Decoration
             Positioned(
               top: -20,
               right: -20,
@@ -63,7 +63,6 @@ class ArabicCard extends StatelessWidget {
               ),
             ),
 
-            // Content
             Positioned.fill(
               child: Padding(
                 padding: const EdgeInsets.all(12),
@@ -73,7 +72,6 @@ class ArabicCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.min,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      // Icon
                       Container(
                         width: 72,
                         height: 72,
@@ -120,7 +118,6 @@ class ArabicCard extends StatelessWidget {
 
                       const SizedBox(height: 10),
 
-                      // Title
                       Text(
                         title,
                         textAlign: TextAlign.center,
@@ -136,7 +133,6 @@ class ArabicCard extends StatelessWidget {
 
                       const SizedBox(height: 2),
 
-                      // Subtitle
                       Text(
                         subtitle,
                         textAlign: TextAlign.center,
@@ -152,7 +148,6 @@ class ArabicCard extends StatelessWidget {
 
                       const SizedBox(height: 8),
 
-                      // Start button
                       Container(
                         padding: const EdgeInsets.symmetric(
                           horizontal: 14,
@@ -172,7 +167,7 @@ class ArabicCard extends StatelessWidget {
                             ),
                             const SizedBox(width: 2),
                             Text(
-                              'ابدأ',
+                              startText,
                               style: TextStyle(
                                 fontFamily: 'Amiri',
                                 fontSize: 15,

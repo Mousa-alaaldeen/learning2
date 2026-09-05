@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:test1/features/home/widgets/home_header.dart';
-import 'package:test1/features/arabic/widgets/arabic_card.dart';
+import 'package:test1/core/widgets/common/learning_category_card.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../controllers/home_controller.dart';
@@ -34,42 +34,42 @@ class HomeBody extends StatelessWidget {
             sliver: SliverGrid(
               delegate: SliverChildListDelegate(
                 [
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'اللغة العربية',
                     subtitle: 'الحروف والأرقام',
                     icon: Icons.menu_book_rounded,
                     color: AppColors.arabicWriting,
                     onTap: controller.openArabic,
                   ),
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'اللغة الإنجليزية',
                     subtitle: 'Learn English',
                     icon: Icons.language_rounded,
                     color: AppColors.lettersPrimary,
                     onTap: controller.openEnglish,
                   ),
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'أصوات الحيوانات',
                     subtitle: 'تعرف على الحيوانات',
                     icon: Icons.pets_rounded,
                     color: AppColors.lettersBlue,
                     onTap: controller.openAnimals,
                   ),
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'تعلم الألوان',
                     subtitle: 'اكتشف الألوان',
                     icon: Icons.palette_rounded,
                     color: AppColors.numbersGreen,
                     onTap: controller.openColors,
                   ),
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'التربية الإسلامية',
                     subtitle: 'تعلم دينك',
                     icon: Icons.mosque_rounded,
                     color: AppColors.numbersDecorationPurple,
                     onTap: controller.openIslam,
                   ),
-                  ArabicCard(
+                  LearningCategoryCard(
                     title: 'الاختبارات',
                     subtitle: 'اختبر معلوماتك',
                     icon: Icons.quiz_rounded,
