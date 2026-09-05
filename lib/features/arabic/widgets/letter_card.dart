@@ -40,15 +40,11 @@ class LetterCard extends StatelessWidget {
               color: AppColors.arabic,
               shape: BoxShape.circle,
             ),
-            child: Icon(
-              letter.icon,
-              size: 58,
-              color: AppColors.primary,
+            child: Text(
+              letter.emoji,
             ),
           ),
-
           const SizedBox(height: 18),
-
           Text(
             letter.letter,
             style: const TextStyle(
@@ -59,9 +55,7 @@ class LetterCard extends StatelessWidget {
               color: AppColors.primary,
             ),
           ),
-
           const SizedBox(height: 12),
-
           Text(
             letter.word,
             style: const TextStyle(
@@ -71,9 +65,7 @@ class LetterCard extends StatelessWidget {
               color: AppColors.textPrimary,
             ),
           ),
-
           const SizedBox(height: 6),
-
           Text(
             'حرف ${letter.letter}',
             style: const TextStyle(

@@ -76,10 +76,14 @@ class LetterAdventure extends StatelessWidget {
                     ),
                   ),
                   child: Center(
-                    child: FaIcon(
-                      letter.icon,
-                      color: Colors.white,
-                      size: 45,
+                    child: Text(
+                      letter.emoji,
+                      style: const TextStyle(
+                        fontFamily: 'Amiri',
+                        fontSize: 70,
+                        fontWeight: FontWeight.w900,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ).animate().scale(

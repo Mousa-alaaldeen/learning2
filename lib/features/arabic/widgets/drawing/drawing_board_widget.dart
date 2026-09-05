@@ -56,16 +56,18 @@ class DrawingBoardWidget extends StatelessWidget {
                       top: 20,
                       left: 20,
                       child: Container(
-                        width: 55,
-                        height: 55,
+                        width: 100,
+                        height: 100,
                         decoration: BoxDecoration(
                           color: AppColors.arabicLetters.withOpacity(0.12),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Icon(
-                          controller.currentLetter.icon,
-                          size: 30,
-                          color: AppColors.lettersBlue,
+                        child: Text(
+                          controller.currentLetter.emoji,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 70,
+                          ),
                         ),
                       ),
                     ),
