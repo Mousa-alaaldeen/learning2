@@ -6,7 +6,7 @@ import '../../../core/services/tts_service.dart';
 import '../../../data/local/learning_data.dart';
 import '../../../data/models/letter_model.dart';
 
-class DrawingPageController extends GetxController {
+class WritingController extends GetxController {
   final TtsService _ttsService = TtsService();
 
   late final DrawingController drawingController;
@@ -64,5 +64,10 @@ class DrawingPageController extends GetxController {
     _ttsService.dispose();
 
     super.onClose();
+  }
+   Future<void> speakCurrentLetter() async {
+    await _ttsService.speak(
+      '${currentLetter.letter}، ${currentLetter.word}',
+    );
   }
 }

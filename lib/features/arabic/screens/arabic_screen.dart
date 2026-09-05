@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../core/theme/app_colors.dart';
+import '../../../core/theme/icon_broken.dart';
 import '../controllers/arabic_controller.dart';
 import '../../../core/widgets/common/learning_category_card.dart';
 
@@ -16,15 +17,22 @@ class ArabicScreen extends GetView<ArabicController> {
         centerTitle: true,
         elevation: 0,
         backgroundColor: AppColors.background,
-        surfaceTintColor: Colors.transparent,
+        surfaceTintColor: AppColors.lettersTitle,
         title: const Text(
           'تعلم اللغة العربية',
           style: TextStyle(
             fontFamily: 'Amiri',
             fontSize: 26,
             fontWeight: FontWeight.w900,
-            color: Color(0xFF24335B),
+            color: AppColors.lettersTitle,
           ),
+        ),
+        leading: IconButton(
+          icon: const Icon(
+            IconBroken.arrowRight,
+            color: AppColors.lettersTitle,
+          ),
+          onPressed: Get.back,
         ),
       ),
       body: GridView(
@@ -37,10 +45,6 @@ class ArabicScreen extends GetView<ArabicController> {
           childAspectRatio: .84,
         ),
         children: [
-          // ==================================================
-          // NUMBERS
-          // ==================================================
-
           LearningCategoryCard(
             title: 'الأرقام العربية',
             subtitle: 'واحد، اثنان، ثلاثة...',
@@ -48,11 +52,6 @@ class ArabicScreen extends GetView<ArabicController> {
             color: AppColors.arabicNumbers,
             onTap: controller.openNumbers,
           ),
-
-          // ==================================================
-          // LETTERS
-          // ==================================================
-
           LearningCategoryCard(
             title: 'الحروف العربية',
             subtitle: 'أ، ب، ت، ث...',
@@ -60,11 +59,6 @@ class ArabicScreen extends GetView<ArabicController> {
             color: AppColors.arabicLetters,
             onTap: controller.openLetters,
           ),
-
-          // ==================================================
-          // WRITING
-          // ==================================================
-
           LearningCategoryCard(
             title: 'كتابة الحروف',
             subtitle: 'تدرب واكتب بنفسك',
@@ -72,11 +66,6 @@ class ArabicScreen extends GetView<ArabicController> {
             color: AppColors.arabicWriting,
             onTap: controller.openWriting,
           ),
-
-          // ==================================================
-          // SENSES
-          // ==================================================
-
           LearningCategoryCard(
             title: 'الحواس الخمس',
             subtitle: 'البصر، السمع، الشم...',

@@ -49,16 +49,12 @@ abstract final class AppColors {
   // ARABIC LEARNING
   // ============================================================
 
-  // الأرقام
   static const arabicNumbers = Color(0xFF35A9F0);
 
-  // الحروف
   static const arabicLetters = Color(0xFF8759E8);
 
-  // كتابة الحروف
   static const arabicWriting = Color(0xFFFFB52E);
 
-  // الحواس
   static const arabicSenses = Color(0xFF63C83F);
 
   // ============================================================

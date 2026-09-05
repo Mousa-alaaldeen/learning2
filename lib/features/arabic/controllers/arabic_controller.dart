@@ -13,7 +13,7 @@ class ArabicController extends GetxController {
   }
 
   void openWriting() {
-    // بنعملها لاحقاً
+    Get.toNamed(AppRoutes.arabicWriting);
   }
 
   void openSenses() {

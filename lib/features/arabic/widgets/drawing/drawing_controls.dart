@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import '../../../../core/theme/app_colors.dart';
 import '../../controllers/writing_controller.dart';
 
@@ -8,9 +7,11 @@ class DrawingControls extends StatelessWidget {
   const DrawingControls({
     super.key,
     required this.controller,
+    required this.letter,
   });
 
-  final DrawingPageController controller;
+  final WritingController controller;
+  final String letter;
 
   @override
   Widget build(BuildContext context) {
@@ -22,18 +23,15 @@ class DrawingControls extends StatelessWidget {
             onTap: controller.nextLetter,
           ),
         ),
-
         const SizedBox(width: 12),
-
         Expanded(
           flex: 2,
           child: _LetterButton(
-            controller: controller,
+            letter: letter,
+            onTap: controller.speakLetter,
           ),
         ),
-
         const SizedBox(width: 12),
-
         Expanded(
           child: _ControlButton(
             icon: Icons.arrow_forward_rounded,
@@ -62,12 +60,14 @@ class _ControlButton extends StatelessWidget {
       child: InkWell(
         onTap: onTap,
         borderRadius: BorderRadius.circular(20),
-        child: const SizedBox(
+        child: SizedBox(
           height: 58,
-          child: Icon(
-            Icons.arrow_back_rounded,
-            color: AppColors.white,
-            size: 28,
+          child: Center(
+            child: Icon(
+              icon,
+              color: AppColors.white,
+              size: 28,
+            ),
           ),
         ),
       ),
@@ -77,10 +77,12 @@ class _ControlButton extends StatelessWidget {
 
 class _LetterButton extends StatelessWidget {
   const _LetterButton({
-    required this.controller,
+    required this.letter,
+    required this.onTap,
   });
 
-  final DrawingPageController controller;
+  final String letter;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +90,7 @@ class _LetterButton extends StatelessWidget {
       color: AppColors.primary,
       borderRadius: BorderRadius.circular(20),
       child: InkWell(
-        onTap: controller.speakLetter,
+        onTap: onTap,
         borderRadius: BorderRadius.circular(20),
         child: SizedBox(
           height: 58,
@@ -96,7 +98,7 @@ class _LetterButton extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                controller.currentLetter.letter,
+                letter,
                 style: const TextStyle(
                   fontFamily: 'Amiri',
                   fontSize: 30,

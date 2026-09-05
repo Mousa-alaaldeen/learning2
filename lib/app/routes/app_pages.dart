@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:test1/features/arabic/bindings/number_binding.dart';
 import 'package:test1/features/arabic/screens/numbers_screen.dart';
+import 'package:test1/features/arabic/screens/writing_screen.dart';
 
 import '../../features/arabic/bindings/senses_binding.dart' show SensesBinding;
+import '../../features/arabic/bindings/writing_binding.dart';
 import '../../features/arabic/screens/senses_screen.dart';
 import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/screens/home_screen.dart';
@@ -38,8 +40,13 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.arabicSenses,
-      page: () =>  SensesScreen(),
+      page: () => SensesScreen(),
       binding: SensesBinding(),
     ),
+    GetPage(
+      name: AppRoutes.arabicWriting,
+      page: () => const WritingScreen(),
+      binding: WritingBinding(),
+    )
   ];
 }

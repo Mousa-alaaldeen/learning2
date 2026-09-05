@@ -10,5 +10,6 @@ class ArabicBinding extends Bindings {
     Get.lazyPut<ArabicController>(() => ArabicController());
     Get.lazyPut<LetterController>(() => LetterController());
     Get.lazyPut<NumberController>(() => NumberController());
+    
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/icon_broken.dart';
 import 'game_round_button.dart';
 
 class GameTopBar extends StatelessWidget {
@@ -27,12 +28,10 @@ class GameTopBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GameRoundButton(
-            icon: Icons.home_rounded,
+            icon: IconBroken.arrowRight,
             onTap: onHome,
           ),
-
           center,
-
           GameRoundButton(
             icon: Icons.volume_up_rounded,
             onTap: onSpeak,
