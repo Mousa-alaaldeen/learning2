@@ -1,16 +1,19 @@
+import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:flutter_confetti_engine/flutter_confetti_engine.dart';
 import 'package:get/get.dart';
 
+import '../../../component/app_audio.dart';
+
 class SenseOption {
   final String name;
-  final IconData icon;
+  final String emoji;
   final Color color;
 
   const SenseOption({
     required this.name,
-    required this.icon,
+    required this.emoji,
     required this.color,
   });
 }
@@ -18,57 +21,56 @@ class SenseOption {
 class SenseItem {
   final String name;
   final String description;
-  final IconData icon;
+  final String emoji;
   final Color color;
 
   const SenseItem({
     required this.name,
     required this.description,
-    required this.icon,
+    required this.emoji,
     required this.color,
   });
 }
 
 class SensesController extends GetxController {
   final FlutterTts _tts = FlutterTts();
+  final AudioPlayer _animalPlayer = AudioPlayer();
 
   final currentIndex = 0.obs;
   final totalStars = 0.obs;
   final isSpeaking = false.obs;
-
   final highlightedOptionIndex = (-1).obs;
-
   final isTeaching = true.obs;
 
   final List<SenseItem> senses = const [
     SenseItem(
       name: 'البصر',
       description: 'نستخدم أعيننا للرؤية',
-      icon: Icons.visibility_rounded,
+      emoji: '👁️',
       color: Color(0xFF35A9F0),
     ),
     SenseItem(
       name: 'السمع',
       description: 'نستخدم أذنينا للسمع',
-      icon: Icons.hearing_rounded,
+      emoji: '👂',
       color: Color(0xFFFFB52E),
     ),
     SenseItem(
       name: 'الشم',
       description: 'نستخدم أنفنا للشم',
-      icon: Icons.face_rounded,
+      emoji: '👃',
       color: Color(0xFF63C83F),
     ),
     SenseItem(
       name: 'التذوق',
       description: 'نستخدم لساننا للتذوق',
-      icon: Icons.restaurant_rounded,
+      emoji: '👅',
       color: Color(0xFFF34F82),
     ),
     SenseItem(
       name: 'اللمس',
       description: 'نستخدم أيدينا للإحساس',
-      icon: Icons.touch_app_rounded,
+      emoji: '🖐️',
       color: Color(0xFF8759E8),
     ),
   ];
@@ -77,85 +79,85 @@ class SensesController extends GetxController {
     [
       SenseOption(
         name: 'تفاحة',
-        icon: Icons.apple_rounded,
+        emoji: '🍎',
         color: Color(0xFFE84C4C),
       ),
       SenseOption(
         name: 'كرة',
-        icon: Icons.sports_soccer_rounded,
+        emoji: '⚽',
         color: Color(0xFF4D8FE8),
       ),
       SenseOption(
         name: 'شمس',
-        icon: Icons.wb_sunny_rounded,
-        color: Color(0xFFFFB52E),
+        emoji: '☀️',
+        color: Color(0xFF54BFEA),
       ),
     ],
     [
       SenseOption(
         name: 'قطة',
-        icon: Icons.pets_rounded,
+        emoji: '🐱',
         color: Color(0xFF8E70E8),
       ),
       SenseOption(
         name: 'كلب',
-        icon: Icons.pets_rounded,
+        emoji: '🐶',
         color: Color(0xFFE79B45),
       ),
       SenseOption(
         name: 'بقرة',
-        icon: Icons.agriculture_rounded,
+        emoji: '🐄',
         color: Color(0xFF63B77A),
       ),
     ],
     [
       SenseOption(
         name: 'وردة',
-        icon: Icons.local_florist_rounded,
+        emoji: '🌹',
         color: Color(0xFFE85B8A),
       ),
       SenseOption(
         name: 'ليمون',
-        icon: Icons.circle_rounded,
+        emoji: '🍋',
         color: Color(0xFFE6C62F),
       ),
       SenseOption(
         name: 'صابون',
-        icon: Icons.soap_rounded,
+        emoji: '🧼',
         color: Color(0xFF54BFEA),
       ),
     ],
     [
       SenseOption(
         name: 'ليمون',
-        icon: Icons.circle_rounded,
+        emoji: '🍋',
         color: Color(0xFFE7C83C),
       ),
       SenseOption(
         name: 'عسل',
-        icon: Icons.local_drink_rounded,
+        emoji: '🍯',
         color: Color(0xFFE99B27),
       ),
       SenseOption(
         name: 'صابون',
-        icon: Icons.soap_rounded,
+        emoji: '🧼',
         color: Color(0xFF54BFEA),
       ),
     ],
     [
       SenseOption(
         name: 'ثلج',
-        icon: Icons.ac_unit_rounded,
+        emoji: '❄️',
         color: Color(0xFF55BDEB),
       ),
       SenseOption(
         name: 'قطن',
-        icon: Icons.cloud_rounded,
+        emoji: '☁️',
         color: Color(0xFF9A72E9),
       ),
       SenseOption(
         name: 'صخرة',
-        icon: Icons.terrain_rounded,
+        emoji: '🪨',
         color: Color(0xFF777777),
       ),
     ],
@@ -171,19 +173,14 @@ class SensesController extends GetxController {
     switch (currentIndex.value) {
       case 0:
         return 'أين التفاحة؟';
-
       case 1:
         return 'من صاحب الصوت؟';
-
       case 2:
         return 'أي شيء له رائحة؟';
-
       case 3:
         return 'أي شيء طعمه حلو؟';
-
       case 4:
         return 'أي شيء ناعم؟';
-
       default:
         return '';
     }
@@ -207,23 +204,15 @@ class SensesController extends GetxController {
 
     Future.delayed(
       const Duration(milliseconds: 700),
-      () {
-        teachCurrent();
-      },
+      teachCurrent,
     );
   }
-
-  // ==========================================================
-  // TTS
-  // ==========================================================
 
   Future<void> _initTts() async {
     await _tts.setLanguage('ar-SA');
     await _tts.setSpeechRate(0.42);
     await _tts.setPitch(1.15);
     await _tts.setVolume(1);
-
-    // مهم جداً
     await _tts.awaitSpeakCompletion(true);
 
     _tts.setStartHandler(() {
@@ -251,15 +240,12 @@ class SensesController extends GetxController {
     }
   }
 
-  // ==========================================================
-
   Future<void> teachCurrent() async {
     isTeaching.value = true;
     highlightedOptionIndex.value = -1;
 
     await _tts.stop();
-
-    // ========================================================
+    await _animalPlayer.stop();
 
     await _speak(
       '${currentSense.name}. ${currentSense.description}',
@@ -269,8 +255,6 @@ class SensesController extends GetxController {
       const Duration(milliseconds: 450),
     );
 
-    // ========================================================
-
     await _speak(
       questionForCurrent,
     );
@@ -279,7 +263,15 @@ class SensesController extends GetxController {
       const Duration(milliseconds: 450),
     );
 
-    // ========================================================
+    if (currentIndex.value == 1) {
+      await _animalPlayer.play(
+        AssetSource(AppOudio.dog_oudio),
+      );
+
+      await Future.delayed(
+        const Duration(milliseconds: 1500),
+      );
+    }
 
     final currentOptions = optionsForCurrent;
 
@@ -301,55 +293,41 @@ class SensesController extends GetxController {
       );
     }
 
-    // ========================================================
-
     highlightedOptionIndex.value = -1;
-
     isTeaching.value = false;
   }
 
   Future<void> speakCurrent() async {
     await _tts.stop();
+    await _animalPlayer.stop();
 
     await _speak(
       '${currentSense.name}. ${currentSense.description}',
     );
   }
 
-  // ==========================================================
   void selectSense(int index) {
     if (index < 0 || index >= senses.length) {
       return;
     }
 
     currentIndex.value = index;
-
     teachCurrent();
   }
-
-  // ==========================================================
 
   void nextSense() {
     if (isLast) return;
 
     currentIndex.value++;
-
     teachCurrent();
   }
-
-  // ==========================================================
-  // السابق
-  // ==========================================================
 
   void previousSense() {
     if (isFirst) return;
 
     currentIndex.value--;
-
     teachCurrent();
   }
-
-  // ==========================================================
 
   Future<void> checkAnswer(
     int index,
@@ -361,10 +339,6 @@ class SensesController extends GetxController {
 
     final correct = index == correctAnswers[currentIndex.value];
 
-    // ========================================================
-    // إجابة خاطئة
-    // ========================================================
-
     if (!correct) {
       await _tts.stop();
 
@@ -375,11 +349,10 @@ class SensesController extends GetxController {
       return;
     }
 
-    // ========================================================
-
     totalStars.value++;
 
     await _tts.stop();
+    await _animalPlayer.stop();
 
     await _speak(
       'أحسنت! إجابة صحيحة',
@@ -393,8 +366,6 @@ class SensesController extends GetxController {
       ),
     );
 
-    // ========================================================
-
     if (isLast) {
       Future.delayed(
         const Duration(milliseconds: 700),
@@ -404,15 +375,12 @@ class SensesController extends GetxController {
       return;
     }
 
-    // ========================================================
-
     Future.delayed(
       const Duration(milliseconds: 900),
       nextSense,
     );
   }
 
-  // ==========================================================
   void _showFinishedDialog(
     BuildContext context,
   ) {
@@ -464,10 +432,8 @@ class SensesController extends GetxController {
               ElevatedButton(
                 onPressed: () {
                   Get.back();
-
                   currentIndex.value = 0;
                   totalStars.value = 0;
-
                   teachCurrent();
                 },
                 child: const Text(
@@ -488,6 +454,8 @@ class SensesController extends GetxController {
   @override
   void onClose() {
     _tts.stop();
+    _animalPlayer.stop();
+    _animalPlayer.dispose();
     super.onClose();
   }
 }

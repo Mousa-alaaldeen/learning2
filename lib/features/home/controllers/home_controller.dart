@@ -9,19 +9,19 @@ import 'package:test1/screen/exam/exam_layout.dart';
 import 'package:test1/screen/islam/islam_screen.dart';
 
 import '../../../app/routes/app_routes.dart';
+import '../../science/screens/science_screen.dart';
 
 class HomeController extends GetxController {
   void openArabic() {
-  Get.toNamed(AppRoutes.arabic);
+    Get.toNamed(AppRoutes.arabic);
   }
 
   void openEnglish() {
     Get.to(() => const EnScreen());
   }
 
-  void openAnimals() {
-    Ads().showAd();
-    Get.to(() => const AnimalScreen());
+  void openScience() {
+    Get.toNamed(AppRoutes.science);
   }
 
   void openColors() {

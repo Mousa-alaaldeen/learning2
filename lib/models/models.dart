@@ -1,6 +1,6 @@
 import 'package:test1/component/app_audio.dart';
 import 'package:test1/component/app_images.dart';
-import 'package:test1/models/animal_model.dart';
+import 'package:test1/data/models/animal_model.dart';
 import 'package:test1/models/number_model.dart';
 
 
@@ -93,63 +93,63 @@ final List<NumberModel> writingNumbersEn = [
     NumberModel(AppOudio.TEN_en, AppImages.WritingTen, '10', 'ten'),
   ];
 
-   final List<AnimalModel> animalsList = [
-    AnimalModel(
-        imagePath: AppImages.bird_oudio,
-        soundPath: AppOudio.bird_oudio,
-        name: 'عصفور'),
-    AnimalModel(
-        imagePath: AppImages.camel_oudio,
-        soundPath: AppOudio.camel_oudio,
-        name: 'جمل'),
-    AnimalModel(
-        imagePath: AppImages.cat_oudio,
-        soundPath: AppOudio.cat_oudio,
-        name: 'قطه'),
-    AnimalModel(
-        imagePath: AppImages.cheep_oudio,
-        soundPath: AppOudio.cheep_oudio,
-        name: 'خروف'),
-    AnimalModel(
-        imagePath: AppImages.chicken_oudio,
-        soundPath: AppOudio.chicken_oudio,
-        name: 'ديك'),
-    AnimalModel(
-        imagePath: AppImages.dog_oudio,
-        soundPath: AppOudio.dog_oudio,
-        name: 'كلب'),
-    AnimalModel(
-        imagePath: AppImages.elephant_oudio,
-        soundPath: AppOudio.elephant_oudio,
-        name: 'فيل'),
-    AnimalModel(
-        imagePath: AppImages.frog_oudio,
-        soundPath: AppOudio.frog_oudio,
-        name: 'ضفدع'),
-    AnimalModel(
-        imagePath: AppImages.lion_oudio,
-        soundPath: AppOudio.lion_oudio,
-        name: 'أسد'),
-    AnimalModel(
-        imagePath: AppImages.monkey_oudio,
-        soundPath: AppOudio.monkey_oudio,
-        name: 'قرد'),
-    AnimalModel(
-        imagePath: AppImages.donkey, soundPath: AppOudio.donkey, name: 'حمار'),
-    AnimalModel(
-        imagePath: AppImages.mouse, soundPath: AppOudio.mouse, name: 'فأر'),
-    AnimalModel(
-        imagePath: AppImages.wolf_oudio, soundPath: AppOudio.wolf, name: 'ذئب'),
-    AnimalModel(
-        imagePath: AppImages.cow, soundPath: AppOudio.cow, name: 'بقره'),
-    AnimalModel(
-        imagePath: AppImages.duck, soundPath: AppOudio.duck, name: 'بطه'),
-    AnimalModel(
-        imagePath: AppImages.gorilla,
-        soundPath: AppOudio.gorilla,
-        name: 'غوريلا'),
-    AnimalModel(
-        imagePath: AppImages.bear, soundPath: AppOudio.bear, name: 'دب'),
-    AnimalModel(
-        imagePath: AppImages.horse, soundPath: AppOudio.horse, name: 'حصان'),
-  ];
+  //  final List<AnimalModel> animalsList = [
+  //   AnimalModel(
+  //       imagePath: AppImages.bird_oudio,
+  //       soundPath: AppOudio.bird_oudio,
+  //       name: 'عصفور'),
+  //   AnimalModel(
+  //       imagePath: AppImages.camel_oudio,
+  //       soundPath: AppOudio.camel_oudio,
+  //       name: 'جمل'),
+  //   AnimalModel(
+  //       imagePath: AppImages.cat_oudio,
+  //       soundPath: AppOudio.cat_oudio,
+  //       name: 'قطه'),
+  //   AnimalModel(
+  //       imagePath: AppImages.cheep_oudio,
+  //       soundPath: AppOudio.cheep_oudio,
+  //       name: 'خروف'),
+  //   AnimalModel(
+  //       imagePath: AppImages.chicken_oudio,
+  //       soundPath: AppOudio.chicken_oudio,
+  //       name: 'ديك'),
+  //   AnimalModel(
+  //       imagePath: AppImages.dog_oudio,
+  //       soundPath: AppOudio.dog_oudio,
+  //       name: 'كلب'),
+  //   AnimalModel(
+  //       imagePath: AppImages.elephant_oudio,
+  //       soundPath: AppOudio.elephant_oudio,
+  //       name: 'فيل'),
+  //   AnimalModel(
+  //       imagePath: AppImages.frog_oudio,
+  //       soundPath: AppOudio.frog_oudio,
+  //       name: 'ضفدع'),
+  //   AnimalModel(
+  //       imagePath: AppImages.lion_oudio,
+  //       soundPath: AppOudio.lion_oudio,
+  //       name: 'أسد'),
+  //   AnimalModel(
+  //       imagePath: AppImages.monkey_oudio,
+  //       soundPath: AppOudio.monkey_oudio,
+  //       name: 'قرد'),
+  //   AnimalModel(
+  //       imagePath: AppImages.donkey, soundPath: AppOudio.donkey, name: 'حمار'),
+  //   AnimalModel(
+  //       imagePath: AppImages.mouse, soundPath: AppOudio.mouse, name: 'فأر'),
+  //   AnimalModel(
+  //       imagePath: AppImages.wolf_oudio, soundPath: AppOudio.wolf, name: 'ذئب'),
+  //   AnimalModel(
+  //       imagePath: AppImages.cow, soundPath: AppOudio.cow, name: 'بقره'),
+  //   AnimalModel(
+  //       imagePath: AppImages.duck, soundPath: AppOudio.duck, name: 'بطه'),
+  //   AnimalModel(
+  //       imagePath: AppImages.gorilla,
+  //       soundPath: AppOudio.gorilla,
+  //       name: 'غوريلا'),
+  //   AnimalModel(
+  //       imagePath: AppImages.bear, soundPath: AppOudio.bear, name: 'دب'),
+  //   AnimalModel(
+  //       imagePath: AppImages.horse, soundPath: AppOudio.horse, name: 'حصان'),
+  // ];

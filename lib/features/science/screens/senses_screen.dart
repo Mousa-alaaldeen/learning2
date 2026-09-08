@@ -5,11 +5,11 @@ import '../../../core/widgets/common/game_progress_badge.dart';
 import '../../../core/widgets/common/game_title.dart';
 import '../../../core/widgets/common/game_top_bar.dart';
 import '../controllers/senses_controller.dart';
-import '../widgets/senses_adventure_room.dart';
-import '../widgets/senses_answer_grid.dart';
-import '../widgets/senses_background.dart';
-import '../widgets/senses_challenge_area.dart';
-import '../widgets/senses_navigation.dart';
+import '../../arabic/widgets/senses_adventure_room.dart';
+import '../../arabic/widgets/senses_answer_grid.dart';
+import '../../arabic/widgets/senses_background.dart';
+import '../../arabic/widgets/senses_challenge_area.dart';
+import '../../arabic/widgets/senses_navigation.dart';
 
 class SensesScreen extends GetView<SensesController> {
   const SensesScreen({super.key});

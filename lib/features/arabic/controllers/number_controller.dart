@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,8 +8,7 @@ import '../../../data/models/number_model.dart';
 class NumberController extends GetxController {
   final TtsService _ttsService = TtsService();
 
-  final List<NumberModel> numbers =
-      LearningData.arabicNumbers;
+  final List<NumberModel> numbers = LearningData.arabicNumbers;
 
   final currentIndex = 0.obs;
 
@@ -23,20 +21,16 @@ class NumberController extends GetxController {
   // النجوم
   final totalStars = 0.obs;
 
-  NumberModel get currentNumber =>
-      numbers[currentIndex.value];
+  NumberModel get currentNumber => numbers[currentIndex.value];
 
-  bool get isFirst =>
-      currentIndex.value == 0;
+  bool get isFirst => currentIndex.value == 0;
 
-  bool get isLast =>
-      currentIndex.value == numbers.length - 1;
+  bool get isLast => currentIndex.value == numbers.length - 1;
 
   double get progress {
     if (numbers.isEmpty) return 0;
 
-    return (currentIndex.value + 1) /
-        numbers.length;
+    return (currentIndex.value + 1) / numbers.length;
   }
 
   @override
@@ -169,7 +163,6 @@ class NumberController extends GetxController {
 
     currentIndex.value--;
 
-    // يبدأ عد الرقم الجديد
     playCounting();
   }
 
@@ -180,4 +173,3 @@ class NumberController extends GetxController {
     super.onClose();
   }
 }
-

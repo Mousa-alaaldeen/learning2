@@ -1,11 +1,12 @@
 import 'package:get/get.dart';
 import 'package:test1/features/arabic/bindings/number_binding.dart';
+import 'package:test1/features/arabic/bindings/science_binding.dart';
+import 'package:test1/features/arabic/bindings/senses_binding.dart';
 import 'package:test1/features/arabic/screens/numbers_screen.dart';
 import 'package:test1/features/arabic/screens/writing_screen.dart';
 
-import '../../features/arabic/bindings/senses_binding.dart' show SensesBinding;
 import '../../features/arabic/bindings/writing_binding.dart';
-import '../../features/arabic/screens/senses_screen.dart';
+import '../../features/science/screens/senses_screen.dart';
 import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/screens/home_screen.dart';
 
@@ -14,6 +15,8 @@ import '../../features/arabic/screens/arabic_screen.dart';
 import '../../features/arabic/bindings/letter_binding.dart';
 import '../../features/arabic/screens/letters_screen.dart';
 
+import '../../features/science/screens/animal_sounds_screen.dart';
+import '../../features/science/screens/science_screen.dart';
 import 'app_routes.dart';
 
 class AppPages {
@@ -47,6 +50,16 @@ class AppPages {
       name: AppRoutes.arabicWriting,
       page: () => const WritingScreen(),
       binding: WritingBinding(),
-    )
+    ),
+    GetPage(
+      name: AppRoutes.science,
+      page: () => const ScienceScreen(),
+      binding: ScienceBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.animalSounds,
+      page: () => const AnimalSoundsScreen(),
+      binding: ScienceBinding(),
+    ),
   ];
 }

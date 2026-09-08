@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '../controllers/senses_controller.dart';
+import '../../science/controllers/senses_controller.dart';
 
 class SensesBinding extends Bindings {
   @override

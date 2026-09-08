@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:test1/data/models/letter_model.dart';
+import '../../component/app_audio.dart';
+import '../models/sense_option_model.dart';
 import '../models/number_model.dart';
 
 class LearningData {
@@ -199,4 +201,98 @@ class LearningData {
       value: 10,
     ),
   ];
+
+ static final List<AnimalModel> animalsList = [
+    AnimalModel(
+      emoji: '🐦',
+      soundPath: AppOudio.bird_oudio,
+      name: 'عصفور',
+    ),
+    AnimalModel(
+      emoji: '🐪',
+      soundPath: AppOudio.camel_oudio,
+      name: 'جمل',
+    ),
+    AnimalModel(
+      emoji: '🐱',
+      soundPath: AppOudio.cat_oudio,
+      name: 'قطه',
+    ),
+    AnimalModel(
+      emoji: '🐑',
+      soundPath: AppOudio.cheep_oudio,
+      name: 'خروف',
+    ),
+    AnimalModel(
+      emoji: '🐓',
+      soundPath: AppOudio.chicken_oudio,
+      name: 'ديك',
+    ),
+    AnimalModel(
+      emoji: '🐕',
+      soundPath: AppOudio.dog_oudio,
+      name: 'كلب',
+    ),
+    AnimalModel(
+      emoji: '🐘',
+      soundPath: AppOudio.elephant_oudio,
+      name: 'فيل',
+    ),
+    AnimalModel(
+      emoji: '🐸',
+      soundPath: AppOudio.frog_oudio,
+      name: 'ضفدع',
+    ),
+    AnimalModel(
+      emoji: '🦁',
+      soundPath: AppOudio.lion_oudio,
+      name: 'أسد',
+    ),
+    AnimalModel(
+      emoji: '🐒',
+      soundPath: AppOudio.monkey_oudio,
+      name: 'قرد',
+    ),
+    AnimalModel(
+      emoji: '🫏',
+      soundPath: AppOudio.donkey,
+      name: 'حمار',
+    ),
+    AnimalModel(
+      emoji: '🐭',
+      soundPath: AppOudio.mouse,
+      name: 'فأر',
+    ),
+    AnimalModel(
+      emoji: '🐺',
+      soundPath: AppOudio.wolf,
+      name: 'ذئب',
+    ),
+    AnimalModel(
+      emoji: '🐄',
+      soundPath: AppOudio.cow,
+      name: 'بقره',
+    ),
+    AnimalModel(
+      emoji: '🦆',
+      soundPath: AppOudio.duck,
+      name: 'بطه',
+    ),
+    AnimalModel(
+      emoji: '🦍',
+      soundPath: AppOudio.gorilla,
+      name: 'غوريلا',
+    ),
+    AnimalModel(
+      emoji: '🐻',
+      soundPath: AppOudio.bear,
+      name: 'دب',
+    ),
+    AnimalModel(
+      emoji: '🐴',
+      soundPath: AppOudio.horse,
+      name: 'حصان',
+    ),
+  ];
+
 }

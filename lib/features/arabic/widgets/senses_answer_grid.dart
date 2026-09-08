@@ -3,7 +3,8 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../controllers/senses_controller.dart';
+import '../../../data/models/sense_option_model.dart';
+import '../../science/controllers/senses_controller.dart';
 
 class SensesAnswerGrid extends StatelessWidget {
   const SensesAnswerGrid({
@@ -37,15 +38,12 @@ class SensesAnswerGrid extends StatelessWidget {
         final option = options[index];
 
         return Obx(() {
-          final isHighlighted =
-              highlightedOptionIndex.value == index;
+          final isHighlighted = highlightedOptionIndex.value == index;
 
           final teaching = isTeaching.value;
 
           return GestureDetector(
-            onTap: teaching
-                ? null
-                : () => onAnswer(index),
+            onTap: teaching ? null : () => onAnswer(index),
             child: AnimatedScale(
               scale: isHighlighted ? 1.12 : 1,
               duration: const Duration(milliseconds: 350),
@@ -76,14 +74,16 @@ class SensesAnswerGrid extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          option.icon,
-                          size: isHighlighted ? 52 : 43,
-                          color: AppColors.white,
+                        Text(
+                          option.emoji,
+                          style: TextStyle(
+                            fontFamily: 'Amiri',
+                            fontSize: isHighlighted ? 40 : 32,
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.white,
+                          ),
                         ),
-
                         const SizedBox(height: 5),
-
                         Text(
                           option.name,
                           style: TextStyle(
@@ -95,7 +95,6 @@ class SensesAnswerGrid extends StatelessWidget {
                         ),
                       ],
                     ),
-
                     if (isHighlighted)
                       Positioned.fill(
                         child: IgnorePointer(

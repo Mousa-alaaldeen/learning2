@@ -49,11 +49,11 @@ class HomeBody extends StatelessWidget {
                     onTap: controller.openEnglish,
                   ),
                   LearningCategoryCard(
-                    title: 'أصوات الحيوانات',
-                    subtitle: 'تعرف على الحيوانات',
-                    icon: Icons.pets_rounded,
+                    title: 'العلوم',
+                    subtitle: 'اكتشف وتعلم',
+                    icon: Icons.science_rounded,
                     color: AppColors.lettersBlue,
-                    onTap: controller.openAnimals,
+                    onTap: controller.openScience,
                   ),
                   LearningCategoryCard(
                     title: 'تعلم الألوان',

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../controllers/senses_controller.dart';
+import '../../../data/models/sense_option_model.dart';
+import '../../science/controllers/senses_controller.dart';
 import 'senses_answer_grid.dart';
 import 'senses_mini_icon.dart';
 
@@ -40,13 +41,10 @@ class SensesChallengeArea extends StatelessWidget {
         children: [
           Row(
             children: [
-              SensesMiniIcon(
-                icon: sense.icon,
-                color: sense.color,
+              Text(
+                sense.emoji,
               ),
-
               const SizedBox(width: 10),
-
               Expanded(
                 child: Text(
                   sense.name,
@@ -58,7 +56,6 @@ class SensesChallengeArea extends StatelessWidget {
                   ),
                 ),
               ),
-
               Text(
                 '${currentIndex + 1}/5',
                 style: const TextStyle(
@@ -68,9 +65,7 @@ class SensesChallengeArea extends StatelessWidget {
               ),
             ],
           ),
-
           const SizedBox(height: 14),
-
           Container(
             width: double.infinity,
             padding: const EdgeInsets.symmetric(
@@ -92,9 +87,7 @@ class SensesChallengeArea extends StatelessWidget {
               ),
             ),
           ),
-
           const SizedBox(height: 15),
-
           answerGrid,
         ],
       ),

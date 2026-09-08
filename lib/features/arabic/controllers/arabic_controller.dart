@@ -16,7 +16,5 @@ class ArabicController extends GetxController {
     Get.toNamed(AppRoutes.arabicWriting);
   }
 
-  void openSenses() {
-    Get.toNamed(AppRoutes.arabicSenses);
-  }
+ 
 }

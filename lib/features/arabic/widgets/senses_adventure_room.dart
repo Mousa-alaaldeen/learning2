@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/common/game_decoration_icon.dart';
-import '../controllers/senses_controller.dart';
+import '../../science/controllers/senses_controller.dart';
 import 'sense_portal.dart';
 
 class SensesAdventureRoom extends StatelessWidget {

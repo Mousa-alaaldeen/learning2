@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../controllers/senses_controller.dart';
+
+import '../../science/controllers/senses_controller.dart';
 
 class SensePortal extends StatelessWidget {
   const SensePortal({
@@ -44,15 +45,17 @@ class SensePortal extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Icon(
-                sense.icon,
-                size: selected ? 45 : 38,
-                color: AppColors.white,
+              child: Text(
+                sense.emoji,
+                style: const TextStyle(
+                  fontFamily: 'Amiri',
+                  fontSize: 40,
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.white,
+                ),
               ),
             ),
-
             const SizedBox(height: 4),
-
             Container(
               padding: const EdgeInsets.symmetric(
                 horizontal: 10,

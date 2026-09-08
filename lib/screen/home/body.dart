@@ -49,22 +49,22 @@ class BodyScreen extends StatelessWidget {
             ],
           ),
         ),
-        SliverToBoxAdapter(
-          child: ItemSmall(
-            onTap: () {
-              Ads().showAd();
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const AnimalScreen(),
-                ),
-              );
-            },
-            color: colors5,
-            text: 'أصوات الحيوانات',
-            images: AppImages.ANIMALS,
-          ),
-        ),
+        // SliverToBoxAdapter(
+        //   child: ItemSmall(
+        //     onTap: () {
+        //       Ads().showAd();
+        //       Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //           builder: (context) => const AnimalScreen(),
+        //         ),
+        //       );
+        //     },
+        //     color: colors5,
+        //     text: 'أصوات الحيوانات',
+        //     images: AppImages.ANIMALS,
+        //   ),
+        // ),
         SliverToBoxAdapter(
           child: Row(
             children: [
