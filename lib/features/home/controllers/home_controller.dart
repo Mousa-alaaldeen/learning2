@@ -17,7 +17,7 @@ class HomeController extends GetxController {
   }
 
   void openEnglish() {
-    Get.to(() => const EnScreen());
+    Get.toNamed(AppRoutes.english);
   }
 
   void openScience() {

@@ -295,4 +295,16 @@ class LearningData {
     ),
   ];
 
+static const List<NumberModel> englishNumbers = [
+  NumberModel(number: '1', name: 'One', value: 1),
+  NumberModel(number: '2', name: 'Two', value: 2),
+  NumberModel(number: '3', name: 'Three', value: 3),
+  NumberModel(number: '4', name: 'Four', value: 4),
+  NumberModel(number: '5', name: 'Five', value: 5),
+  NumberModel(number: '6', name: 'Six', value: 6),
+  NumberModel(number: '7', name: 'Seven', value: 7),
+  NumberModel(number: '8', name: 'Eight', value: 8),
+  NumberModel(number: '9', name: 'Nine', value: 9),
+  NumberModel(number: '10', name: 'Ten', value: 10),
+];
 }

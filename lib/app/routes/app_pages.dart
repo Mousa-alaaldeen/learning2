@@ -15,6 +15,11 @@ import '../../features/arabic/screens/arabic_screen.dart';
 import '../../features/arabic/bindings/letter_binding.dart';
 import '../../features/arabic/screens/letters_screen.dart';
 
+import '../../features/english/bindings/english_binding.dart';
+import '../../features/english/bindings/english_numbers_binding.dart';
+import '../../features/english/screens/english_screen.dart';
+import '../../features/english/screens/english_numbers_screen.dart';
+
 import '../../features/science/screens/animal_sounds_screen.dart';
 import '../../features/science/screens/science_screen.dart';
 import 'app_routes.dart';
@@ -60,6 +65,16 @@ class AppPages {
       name: AppRoutes.animalSounds,
       page: () => const AnimalSoundsScreen(),
       binding: ScienceBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.english,
+      page: () => const EnglishScreen(),
+      binding: EnglishBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishNumbers,
+      page: () => const EnglishNumbersScreen(),
+      binding: EnglishNumbersBinding(),
     ),
   ];
 }

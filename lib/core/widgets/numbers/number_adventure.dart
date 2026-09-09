@@ -8,10 +8,12 @@ class NumberAdventure extends StatelessWidget {
     super.key,
     required this.number,
     required this.index,
+    this.subtitle = 'هيا نعد معًا! 🍎',
   });
 
   final dynamic number;
   final int index;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class NumberAdventure extends StatelessWidget {
           BoxShadow(
             color: AppColors.shadow,
             blurRadius: 20,
-            offset: Offset(0, 8),
+            offset: const Offset(0, 8),
           ),
         ],
       ),
@@ -123,9 +125,9 @@ class NumberAdventure extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 12),
-                const Text(
-                  'هيا نعد معًا! 🍎',
-                  style: TextStyle(
+                Text(
+                  subtitle,
+                  style: const TextStyle(
                     fontFamily: 'Amiri',
                     fontSize: 18,
                     fontWeight: FontWeight.bold,

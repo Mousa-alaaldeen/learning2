@@ -11,6 +11,11 @@ class CountingCard extends StatelessWidget {
     required this.totalNumbers,
     required this.isCounting,
     required this.onCount,
+    this.english = false,
+    this.title = 'نعد التفاحات',
+    this.readyText = 'استعد للعد! 🍎',
+    this.buttonText = 'أعد معي',
+    this.countingText = 'نعد...',
   });
 
   final int visibleObjects;
@@ -18,6 +23,12 @@ class CountingCard extends StatelessWidget {
   final int totalNumbers;
   final bool isCounting;
   final VoidCallback onCount;
+  final String title;
+  final String readyText;
+  final String buttonText;
+  final String countingText;
+
+  final bool english;
 
   @override
   Widget build(BuildContext context) {
@@ -53,10 +64,10 @@ class CountingCard extends StatelessWidget {
                 ),
               ),
               const SizedBox(width: 10),
-              const Expanded(
+              Expanded(
                 child: Text(
-                  'نعد التفاحات',
-                  style: TextStyle(
+                  title,
+                  style: const TextStyle(
                     fontFamily: 'Amiri',
                     fontSize: 24,
                     fontWeight: FontWeight.bold,
@@ -78,9 +89,9 @@ class CountingCard extends StatelessWidget {
             height: 260,
             child: Center(
               child: visibleObjects == 0
-                  ? const Text(
-                      'استعد للعد! 🍎',
-                      style: TextStyle(
+                  ? Text(
+                      readyText,
+                      style: const TextStyle(
                         fontFamily: 'Amiri',
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
@@ -95,6 +106,7 @@ class CountingCard extends StatelessWidget {
                         visibleObjects,
                         (index) => AppleItem(
                           number: index + 1,
+                          english: english,
                         ),
                       ),
                     ),
@@ -123,7 +135,7 @@ class CountingCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 7),
                     Text(
-                      isCounting ? 'نعد...' : 'أعد معي',
+                      isCounting ? countingText : buttonText,
                       style: const TextStyle(
                         fontFamily: 'Amiri',
                         fontSize: 18,

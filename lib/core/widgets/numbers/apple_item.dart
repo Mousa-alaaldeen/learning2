@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
@@ -8,9 +7,11 @@ class AppleItem extends StatelessWidget {
   const AppleItem({
     super.key,
     required this.number,
+    this.english = false,
   });
 
   final int number;
+  final bool english;
 
   @override
   Widget build(BuildContext context) {
@@ -37,11 +38,9 @@ class AppleItem extends StatelessWidget {
             color: AppColors.numbersRed,
           ),
         ),
-
         const SizedBox(height: 2),
-
         Text(
-          _arabicDigit(number),
+          english ? number.toString() : _arabicDigit(number),
           style: const TextStyle(
             fontFamily: 'Amiri',
             fontSize: 17,
