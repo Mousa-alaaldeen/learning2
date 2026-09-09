@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:test1/data/models/letter_model.dart';
 import '../../component/app_audio.dart';
+import '../models/color_model.dart';
 import '../models/sense_option_model.dart';
 import '../models/number_model.dart';
 
@@ -202,7 +203,7 @@ class LearningData {
     ),
   ];
 
- static final List<AnimalModel> animalsList = [
+  static final List<AnimalModel> animalsList = [
     AnimalModel(
       emoji: '🐦',
       soundPath: AppOudio.bird_oudio,
@@ -295,149 +296,274 @@ class LearningData {
     ),
   ];
 
-static const List<NumberModel> englishNumbers = [
-  NumberModel(number: '1', name: 'One', value: 1),
-  NumberModel(number: '2', name: 'Two', value: 2),
-  NumberModel(number: '3', name: 'Three', value: 3),
-  NumberModel(number: '4', name: 'Four', value: 4),
-  NumberModel(number: '5', name: 'Five', value: 5),
-  NumberModel(number: '6', name: 'Six', value: 6),
-  NumberModel(number: '7', name: 'Seven', value: 7),
-  NumberModel(number: '8', name: 'Eight', value: 8),
-  NumberModel(number: '9', name: 'Nine', value: 9),
-  NumberModel(number: '10', name: 'Ten', value: 10),
-];
+  static const List<NumberModel> englishNumbers = [
+    NumberModel(number: '1', name: 'One', value: 1),
+    NumberModel(number: '2', name: 'Two', value: 2),
+    NumberModel(number: '3', name: 'Three', value: 3),
+    NumberModel(number: '4', name: 'Four', value: 4),
+    NumberModel(number: '5', name: 'Five', value: 5),
+    NumberModel(number: '6', name: 'Six', value: 6),
+    NumberModel(number: '7', name: 'Seven', value: 7),
+    NumberModel(number: '8', name: 'Eight', value: 8),
+    NumberModel(number: '9', name: 'Nine', value: 9),
+    NumberModel(number: '10', name: 'Ten', value: 10),
+  ];
 
-static const List<LetterModel> englishLetters = [
-  LetterModel(
-    letter: 'A',
-    word: 'Apple',
-    emoji: '🍎',
-  ),
-  LetterModel(
-    letter: 'B',
-    word: 'Ball',
-    emoji: '⚽',
-  ),
-  LetterModel(
-    letter: 'C',
-    word: 'Cat',
-    emoji: '🐱',
-  ),
-  LetterModel(
-    letter: 'D',
-    word: 'Dog',
-    emoji: '🐶',
-  ),
-  LetterModel(
-    letter: 'E',
-    word: 'Elephant',
-    emoji: '🐘',
-  ),
-  LetterModel(
-    letter: 'F',
-    word: 'Fish',
-    emoji: '🐟',
-  ),
-  LetterModel(
-    letter: 'G',
-    word: 'Giraffe',
-    emoji: '🦒',
-  ),
-  LetterModel(
-    letter: 'H',
-    word: 'Horse',
-    emoji: '🐴',
-  ),
-  LetterModel(
-    letter: 'I',
-    word: 'Ice Cream',
-    emoji: '🍦',
-  ),
-  LetterModel(
-    letter: 'J',
-    word: 'Juice',
-    emoji: '🧃',
-  ),
-  LetterModel(
-    letter: 'K',
-    word: 'Kite',
-    emoji: '🪁',
-  ),
-  LetterModel(
-    letter: 'L',
-    word: 'Lion',
-    emoji: '🦁',
-  ),
-  LetterModel(
-    letter: 'M',
-    word: 'Monkey',
-    emoji: '🐒',
-  ),
-  LetterModel(
-    letter: 'N',
-    word: 'Nest',
-    emoji: '🪺',
-  ),
-  LetterModel(
-    letter: 'O',
-    word: 'Orange',
-    emoji: '🍊',
-  ),
-  LetterModel(
-    letter: 'P',
-    word: 'Penguin',
-    emoji: '🐧',
-  ),
-  LetterModel(
-    letter: 'Q',
-    word: 'Queen',
-    emoji: '👑',
-  ),
-  LetterModel(
-    letter: 'R',
-    word: 'Rabbit',
-    emoji: '🐰',
-  ),
-  LetterModel(
-    letter: 'S',
-    word: 'Sun',
-    emoji: '☀️',
-  ),
-  LetterModel(
-    letter: 'T',
-    word: 'Tiger',
-    emoji: '🐯',
-  ),
-  LetterModel(
-    letter: 'U',
-    word: 'Umbrella',
-    emoji: '☂️',
-  ),
-  LetterModel(
-    letter: 'V',
-    word: 'Van',
-    emoji: '🚐',
-  ),
-  LetterModel(
-    letter: 'W',
-    word: 'Whale',
-    emoji: '🐋',
-  ),
-  LetterModel(
-    letter: 'X',
-    word: 'Xylophone',
-    emoji: '🎵',
-  ),
-  LetterModel(
-    letter: 'Y',
-    word: 'Yo-yo',
-    emoji: '🪀',
-  ),
-  LetterModel(
-    letter: 'Z',
-    word: 'Zebra',
-    emoji: '🦓',
-  ),
-];
+  static const List<LetterModel> englishLetters = [
+    LetterModel(
+      letter: 'A',
+      word: 'Apple',
+      emoji: '🍎',
+    ),
+    LetterModel(
+      letter: 'B',
+      word: 'Ball',
+      emoji: '⚽',
+    ),
+    LetterModel(
+      letter: 'C',
+      word: 'Cat',
+      emoji: '🐱',
+    ),
+    LetterModel(
+      letter: 'D',
+      word: 'Dog',
+      emoji: '🐶',
+    ),
+    LetterModel(
+      letter: 'E',
+      word: 'Elephant',
+      emoji: '🐘',
+    ),
+    LetterModel(
+      letter: 'F',
+      word: 'Fish',
+      emoji: '🐟',
+    ),
+    LetterModel(
+      letter: 'G',
+      word: 'Giraffe',
+      emoji: '🦒',
+    ),
+    LetterModel(
+      letter: 'H',
+      word: 'Horse',
+      emoji: '🐴',
+    ),
+    LetterModel(
+      letter: 'I',
+      word: 'Ice Cream',
+      emoji: '🍦',
+    ),
+    LetterModel(
+      letter: 'J',
+      word: 'Juice',
+      emoji: '🧃',
+    ),
+    LetterModel(
+      letter: 'K',
+      word: 'Kite',
+      emoji: '🪁',
+    ),
+    LetterModel(
+      letter: 'L',
+      word: 'Lion',
+      emoji: '🦁',
+    ),
+    LetterModel(
+      letter: 'M',
+      word: 'Monkey',
+      emoji: '🐒',
+    ),
+    LetterModel(
+      letter: 'N',
+      word: 'Nest',
+      emoji: '🪺',
+    ),
+    LetterModel(
+      letter: 'O',
+      word: 'Orange',
+      emoji: '🍊',
+    ),
+    LetterModel(
+      letter: 'P',
+      word: 'Penguin',
+      emoji: '🐧',
+    ),
+    LetterModel(
+      letter: 'Q',
+      word: 'Queen',
+      emoji: '👑',
+    ),
+    LetterModel(
+      letter: 'R',
+      word: 'Rabbit',
+      emoji: '🐰',
+    ),
+    LetterModel(
+      letter: 'S',
+      word: 'Sun',
+      emoji: '☀️',
+    ),
+    LetterModel(
+      letter: 'T',
+      word: 'Tiger',
+      emoji: '🐯',
+    ),
+    LetterModel(
+      letter: 'U',
+      word: 'Umbrella',
+      emoji: '☂️',
+    ),
+    LetterModel(
+      letter: 'V',
+      word: 'Van',
+      emoji: '🚐',
+    ),
+    LetterModel(
+      letter: 'W',
+      word: 'Whale',
+      emoji: '🐋',
+    ),
+    LetterModel(
+      letter: 'X',
+      word: 'Xylophone',
+      emoji: '🎵',
+    ),
+    LetterModel(
+      letter: 'Y',
+      word: 'Yo-yo',
+      emoji: '🪀',
+    ),
+    LetterModel(
+      letter: 'Z',
+      word: 'Zebra',
+      emoji: '🦓',
+    ),
+  ];
+  static final List<ColorModel> arabicColors = [
+    ColorModel(
+      name: 'أحمر',
+      colorValue: 0xFFE53935,
+      emoji: '🍎',
+      example: 'تفاحة',
+    ),
+    ColorModel(
+      name: 'أزرق',
+      colorValue: 0xFF1E88E5,
+      emoji: '⚽',
+      example: 'كرة',
+    ),
+    ColorModel(
+      name: 'أصفر',
+      colorValue: 0xFFFDD835,
+      emoji: '☀️',
+      example: 'شمس',
+    ),
+    ColorModel(
+      name: 'أخضر',
+      colorValue: 0xFF43A047,
+      emoji: '🍃',
+      example: 'ورقة',
+    ),
+    ColorModel(
+      name: 'برتقالي',
+      colorValue: 0xFFFB8C00,
+      emoji: '🍊',
+      example: 'برتقالة',
+    ),
+    ColorModel(
+      name: 'بنفسجي',
+      colorValue: 0xFF8E24AA,
+      emoji: '🍇',
+      example: 'عنب',
+    ),
+    ColorModel(
+      name: 'زهري',
+      colorValue: 0xFFEC407A,
+      emoji: '🌸',
+      example: 'زهرة',
+    ),
+    ColorModel(
+      name: 'بني',
+      colorValue: 0xFF6D4C41,
+      emoji: '🐻',
+      example: 'دب',
+    ),
+    ColorModel(
+      name: 'أسود',
+      colorValue: 0xFF212121,
+      emoji: '🐈‍⬛',
+      example: 'قطة',
+    ),
+    ColorModel(
+      name: 'أبيض',
+      colorValue: 0xFFF5F5F5,
+      emoji: '❄️',
+      example: 'ثلج',
+    ),
+  ];
+
+  static final List<ColorModel> englishColors = [
+    ColorModel(
+      name: 'Red',
+      colorValue: 0xFFE53935,
+      emoji: '🍎',
+      example: 'Apple',
+    ),
+    ColorModel(
+      name: 'Blue',
+      colorValue: 0xFF1E88E5,
+      emoji: '⚽',
+      example: 'Ball',
+    ),
+    ColorModel(
+      name: 'Yellow',
+      colorValue: 0xFFFDD835,
+      emoji: '☀️',
+      example: 'Sun',
+    ),
+    ColorModel(
+      name: 'Green',
+      colorValue: 0xFF43A047,
+      emoji: '🍃',
+      example: 'Leaf',
+    ),
+    ColorModel(
+      name: 'Orange',
+      colorValue: 0xFFFB8C00,
+      emoji: '🍊',
+      example: 'Orange',
+    ),
+    ColorModel(
+      name: 'Purple',
+      colorValue: 0xFF8E24AA,
+      emoji: '🍇',
+      example: 'Grapes',
+    ),
+    ColorModel(
+      name: 'Pink',
+      colorValue: 0xFFEC407A,
+      emoji: '🌸',
+      example: 'Flower',
+    ),
+    ColorModel(
+      name: 'Brown',
+      colorValue: 0xFF6D4C41,
+      emoji: '🐻',
+      example: 'Bear',
+    ),
+    ColorModel(
+      name: 'Black',
+      colorValue: 0xFF212121,
+      emoji: '🐈‍⬛',
+      example: 'Cat',
+    ),
+    ColorModel(
+      name: 'White',
+      colorValue: 0xFFF5F5F5,
+      emoji: '❄️',
+      example: 'Snow',
+    ),
+  ];
 }

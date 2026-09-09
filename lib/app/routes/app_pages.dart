@@ -4,8 +4,12 @@ import 'package:test1/features/arabic/bindings/science_binding.dart';
 import 'package:test1/features/arabic/bindings/senses_binding.dart';
 import 'package:test1/features/arabic/screens/numbers_screen.dart';
 import 'package:test1/features/arabic/screens/writing_screen.dart';
+import 'package:test1/features/colors/screens/arabic_colors_screen.dart';
 
 import '../../features/arabic/bindings/writing_binding.dart';
+import '../../features/colors/bindings/arabic_colors_binding.dart';
+import '../../features/colors/bindings/english_colors_binding.dart';
+import '../../features/colors/screens/english_colors_screen.dart';
 import '../../features/english/bindings/english_letters_binding.dart';
 import '../../features/english/screens/english_letters_screen.dart';
 import '../../features/science/screens/senses_screen.dart';
@@ -82,6 +86,16 @@ class AppPages {
       name: AppRoutes.englishLetters,
       page: () => const EnglishLettersScreen(),
       binding: EnglishLettersBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishColors,
+      page: () => const EnglishColorsScreen(),
+      binding: EnglishColorsBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.arabicColors,
+      page: () => const ArabicColorsScreen(),
+      binding: ArabicColorsBinding(),
     ),
   ];
 }

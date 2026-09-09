@@ -56,13 +56,6 @@ class HomeBody extends StatelessWidget {
                     onTap: controller.openScience,
                   ),
                   LearningCategoryCard(
-                    title: 'تعلم الألوان',
-                    subtitle: 'اكتشف الألوان',
-                    icon: Icons.palette_rounded,
-                    color: AppColors.numbersGreen,
-                    onTap: controller.openColors,
-                  ),
-                  LearningCategoryCard(
                     title: 'التربية الإسلامية',
                     subtitle: 'تعلم دينك',
                     icon: Icons.mosque_rounded,

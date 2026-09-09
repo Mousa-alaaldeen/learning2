@@ -66,7 +66,13 @@ class ArabicScreen extends GetView<ArabicController> {
             color: AppColors.arabicWriting,
             onTap: controller.openWriting,
           ),
-       
+       LearningCategoryCard(
+  title: 'الألوان',
+  subtitle: 'أحمر، أزرق، أخضر...',
+  icon: Icons.palette_rounded,
+  color: AppColors.numbersDecorationPurple,
+  onTap: controller.openColors,
+),
         ],
       ),
     );

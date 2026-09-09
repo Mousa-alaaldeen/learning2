@@ -94,6 +94,13 @@ class EnglishScreen extends GetView<EnglishController> {
             color: AppColors.arabicNumbers,
             onTap: controller.openWeekDays,
           ),
+          LearningCategoryCard(
+            title: 'English Colors',
+            subtitle: 'Red, Blue, Green...',
+            icon: Icons.palette_rounded,
+            color: AppColors.numbersDecorationPurple,
+            onTap: controller.openColors,
+          ),
         ],
       ),
     );

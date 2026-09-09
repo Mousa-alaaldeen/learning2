@@ -33,4 +33,7 @@ class EnglishController extends GetxController {
   void openWeekDays() {
     Get.toNamed(AppRoutes.englishWeekDays);
   }
+  void openColors() {
+  Get.toNamed(AppRoutes.englishColors);
+}
 }

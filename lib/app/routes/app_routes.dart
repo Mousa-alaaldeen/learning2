@@ -7,7 +7,7 @@ abstract class AppRoutes {
   static const arabicLetters = '/arabic/letters';
   static const arabicNumbers = '/arabic/numbers';
   static const arabicWriting = '/arabic/writing';
-
+static const arabicColors = '/arabic-colors';
  
 
 static const english = '/english';
@@ -18,6 +18,7 @@ static const englishWritingNumbers = '/english/writing-numbers';
 static const englishSenses = '/english/senses';
 static const englishStories = '/english/stories';
 static const englishWeekDays = '/english/week-days';
+static const englishColors = '/english-colors';
 
   static const animals = '/animals';
   static const colors = '/colors';
