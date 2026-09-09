@@ -6,6 +6,8 @@ import 'package:test1/features/arabic/screens/numbers_screen.dart';
 import 'package:test1/features/arabic/screens/writing_screen.dart';
 
 import '../../features/arabic/bindings/writing_binding.dart';
+import '../../features/english/bindings/english_letters_binding.dart';
+import '../../features/english/screens/english_letters_screen.dart';
 import '../../features/science/screens/senses_screen.dart';
 import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/screens/home_screen.dart';
@@ -75,6 +77,11 @@ class AppPages {
       name: AppRoutes.englishNumbers,
       page: () => const EnglishNumbersScreen(),
       binding: EnglishNumbersBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishLetters,
+      page: () => const EnglishLettersScreen(),
+      binding: EnglishLettersBinding(),
     ),
   ];
 }

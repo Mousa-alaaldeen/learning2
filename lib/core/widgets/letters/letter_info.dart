@@ -6,12 +6,13 @@ class LetterInfo extends StatelessWidget {
     required this.letter,
     required this.onSpeak,
     required this.color,
+    this.title = 'الحرف والمثال',
   });
 
   final dynamic letter;
   final VoidCallback onSpeak;
   final Color color;
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -48,9 +49,9 @@ class LetterInfo extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Text(
-                  'الحرف والمثال',
-                  style: TextStyle(
+                Text(
+                  "$title",
+                  style: const TextStyle(
                     fontFamily: 'Amiri',
                     fontSize: 15,
                     fontWeight: FontWeight.bold,

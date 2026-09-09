@@ -307,4 +307,137 @@ static const List<NumberModel> englishNumbers = [
   NumberModel(number: '9', name: 'Nine', value: 9),
   NumberModel(number: '10', name: 'Ten', value: 10),
 ];
+
+static const List<LetterModel> englishLetters = [
+  LetterModel(
+    letter: 'A',
+    word: 'Apple',
+    emoji: '🍎',
+  ),
+  LetterModel(
+    letter: 'B',
+    word: 'Ball',
+    emoji: '⚽',
+  ),
+  LetterModel(
+    letter: 'C',
+    word: 'Cat',
+    emoji: '🐱',
+  ),
+  LetterModel(
+    letter: 'D',
+    word: 'Dog',
+    emoji: '🐶',
+  ),
+  LetterModel(
+    letter: 'E',
+    word: 'Elephant',
+    emoji: '🐘',
+  ),
+  LetterModel(
+    letter: 'F',
+    word: 'Fish',
+    emoji: '🐟',
+  ),
+  LetterModel(
+    letter: 'G',
+    word: 'Giraffe',
+    emoji: '🦒',
+  ),
+  LetterModel(
+    letter: 'H',
+    word: 'Horse',
+    emoji: '🐴',
+  ),
+  LetterModel(
+    letter: 'I',
+    word: 'Ice Cream',
+    emoji: '🍦',
+  ),
+  LetterModel(
+    letter: 'J',
+    word: 'Juice',
+    emoji: '🧃',
+  ),
+  LetterModel(
+    letter: 'K',
+    word: 'Kite',
+    emoji: '🪁',
+  ),
+  LetterModel(
+    letter: 'L',
+    word: 'Lion',
+    emoji: '🦁',
+  ),
+  LetterModel(
+    letter: 'M',
+    word: 'Monkey',
+    emoji: '🐒',
+  ),
+  LetterModel(
+    letter: 'N',
+    word: 'Nest',
+    emoji: '🪺',
+  ),
+  LetterModel(
+    letter: 'O',
+    word: 'Orange',
+    emoji: '🍊',
+  ),
+  LetterModel(
+    letter: 'P',
+    word: 'Penguin',
+    emoji: '🐧',
+  ),
+  LetterModel(
+    letter: 'Q',
+    word: 'Queen',
+    emoji: '👑',
+  ),
+  LetterModel(
+    letter: 'R',
+    word: 'Rabbit',
+    emoji: '🐰',
+  ),
+  LetterModel(
+    letter: 'S',
+    word: 'Sun',
+    emoji: '☀️',
+  ),
+  LetterModel(
+    letter: 'T',
+    word: 'Tiger',
+    emoji: '🐯',
+  ),
+  LetterModel(
+    letter: 'U',
+    word: 'Umbrella',
+    emoji: '☂️',
+  ),
+  LetterModel(
+    letter: 'V',
+    word: 'Van',
+    emoji: '🚐',
+  ),
+  LetterModel(
+    letter: 'W',
+    word: 'Whale',
+    emoji: '🐋',
+  ),
+  LetterModel(
+    letter: 'X',
+    word: 'Xylophone',
+    emoji: '🎵',
+  ),
+  LetterModel(
+    letter: 'Y',
+    word: 'Yo-yo',
+    emoji: '🪀',
+  ),
+  LetterModel(
+    letter: 'Z',
+    word: 'Zebra',
+    emoji: '🦓',
+  ),
+];
 }
