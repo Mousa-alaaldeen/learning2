@@ -5,6 +5,7 @@ import '../../component/app_audio.dart';
 import '../models/color_model.dart';
 import '../models/sense_option_model.dart';
 import '../models/number_model.dart';
+import '../models/week_day_model.dart';
 
 class LearningData {
   static const List<LetterModel> arabicLetters = [
@@ -564,6 +565,44 @@ class LearningData {
       colorValue: 0xFFF5F5F5,
       emoji: '❄️',
       example: 'Snow',
+    ),
+  ];
+
+  static const List<WeekDayModel> englishWeekDays = [
+    WeekDayModel(
+      day: 'Sunday',
+      name: 'Sunday',
+      value: 1,
+    ),
+    WeekDayModel(
+      day: 'Monday',
+      name: 'Monday',
+      value: 2,
+    ),
+    WeekDayModel(
+      day: 'Tuesday',
+      name: 'Tuesday',
+      value: 3,
+    ),
+    WeekDayModel(
+      day: 'Wednesday',
+      name: 'Wednesday',
+      value: 4,
+    ),
+    WeekDayModel(
+      day: 'Thursday',
+      name: 'Thursday',
+      value: 5,
+    ),
+    WeekDayModel(
+      day: 'Friday',
+      name: 'Friday',
+      value: 6,
+    ),
+    WeekDayModel(
+      day: 'Saturday',
+      name: 'Saturday',
+      value: 7,
     ),
   ];
 }

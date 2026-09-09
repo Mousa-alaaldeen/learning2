@@ -11,10 +11,11 @@ import '../../features/colors/bindings/arabic_colors_binding.dart';
 import '../../features/colors/bindings/english_colors_binding.dart';
 import '../../features/colors/screens/english_colors_screen.dart';
 import '../../features/english/bindings/english_letters_binding.dart';
+import '../../features/english/bindings/english_week_days_binding.dart';
 import '../../features/english/bindings/english_writing_binding.dart';
 import '../../features/english/bindings/english_writing_numbers_binding.dart';
-import '../../features/english/bindings/english_writing_numbers_binding.dart';
 import '../../features/english/screens/english_letters_screen.dart';
+import '../../features/english/screens/english_week_days_screen.dart';
 import '../../features/english/screens/english_writing_numbers_screen.dart';
 import '../../features/english/screens/english_writing_screen.dart';
 import '../../features/science/screens/senses_screen.dart';
@@ -103,14 +104,19 @@ class AppPages {
       binding: ArabicColorsBinding(),
     ),
     GetPage(
-  name: AppRoutes.englishWritingLetters,
-  page: () => const EnglishWritingScreen(),
-  binding: EnglishWritingBinding(),
-),
-GetPage(
-  name: AppRoutes.englishWritingNumbers,
-  page: () => const EnglishWritingNumbersScreen(),
-  binding: EnglishWritingNumbersBinding(),
-),
+      name: AppRoutes.englishWritingLetters,
+      page: () => const EnglishWritingScreen(),
+      binding: EnglishWritingBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishWritingNumbers,
+      page: () => const EnglishWritingNumbersScreen(),
+      binding: EnglishWritingNumbersBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishWeekDays,
+      page: () => const EnglishWeekDaysScreen(),
+      binding: EnglishWeekDaysBinding(),
+    ),
   ];
 }
