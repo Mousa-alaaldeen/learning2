@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../core/theme/app_colors.dart';
 
-import '../../science/controllers/senses_controller.dart';
+import '../../../data/models/sense_item.dart';
 
 class SensePortal extends StatelessWidget {
   const SensePortal({

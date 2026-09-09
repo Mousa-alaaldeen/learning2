@@ -20,6 +20,7 @@ static const englishStories = '/english/stories';
 static const englishWeekDays = '/english/week-days';
 static const englishColors = '/english-colors';
 
+
   static const animals = '/animals';
   static const colors = '/colors';
   static const islam = '/islam';

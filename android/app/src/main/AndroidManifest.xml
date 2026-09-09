@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="تعلم باللعب"
+        android:label="تعليم الاطفال الحروف و الارقام"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon">
         <activity

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../controllers/writing_controller.dart';
+import '../../controllers/english_writing_numbers_controller.dart';
 
-class DrawingBoardWidget extends StatelessWidget {
-  final WritingController controller;
+class EnglishNumberDrawingBoardWidget extends StatelessWidget {
+  final EnglishWritingNumbersController controller;
 
-  const DrawingBoardWidget({
+  const EnglishNumberDrawingBoardWidget({
     super.key,
     required this.controller,
   });
@@ -43,31 +43,44 @@ class DrawingBoardWidget extends StatelessWidget {
                   children: [
                     Center(
                       child: Text(
-                        controller.currentLetter.letter,
+                        controller.currentNumber.number,
                         style: TextStyle(
-                          fontFamily: 'Amiri',
-                          fontSize: 200,
+                          fontSize: 280,
                           fontWeight: FontWeight.bold,
                           color: AppColors.lettersProgressBackground,
                         ),
                       ),
                     ),
+
                     Positioned(
                       top: 20,
                       left: 20,
                       child: Container(
-                        width: 100,
+                        width: 110,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: AppColors.arabicLetters.withOpacity(0.12),
+                          color: AppColors.numbersGreen.withOpacity(0.12),
                           borderRadius: BorderRadius.circular(16),
                         ),
-                        child: Text(
-                          controller.currentLetter.emoji,
-                          textAlign: TextAlign.center,
-                          style: const TextStyle(
-                            fontSize: 70,
-                          ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              controller.currentNumber.number,
+                              style: const TextStyle(
+                                fontSize: 38,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              controller.currentNumber.name,
+                              style: const TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),

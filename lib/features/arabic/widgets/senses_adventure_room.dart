@@ -3,7 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/common/game_decoration_icon.dart';
-import '../../science/controllers/senses_controller.dart';
+import '../../../data/models/sense_item.dart';
 import 'sense_portal.dart';
 
 class SensesAdventureRoom extends StatelessWidget {
@@ -52,7 +52,6 @@ class SensesAdventureRoom extends StatelessWidget {
               size: 30,
             ),
           ),
-
           Positioned(
             right: 20,
             top: 55,
@@ -62,7 +61,6 @@ class SensesAdventureRoom extends StatelessWidget {
               size: 35,
             ),
           ),
-
           Positioned(
             left: 15,
             bottom: 25,
@@ -72,7 +70,6 @@ class SensesAdventureRoom extends StatelessWidget {
               size: 25,
             ),
           ),
-
           Positioned(
             right: 18,
             bottom: 30,
@@ -82,9 +79,6 @@ class SensesAdventureRoom extends StatelessWidget {
               size: 28,
             ),
           ),
-
-          // الشخصية
-
           Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -102,8 +96,7 @@ class SensesAdventureRoom extends StatelessWidget {
                     ),
                     boxShadow: [
                       BoxShadow(
-                        color: AppColors.sensesCharacterShadow
-                            .withOpacity(.35),
+                        color: AppColors.sensesCharacterShadow.withOpacity(.35),
                         blurRadius: 25,
                         spreadRadius: 4,
                       ),
@@ -126,9 +119,7 @@ class SensesAdventureRoom extends StatelessWidget {
                       duration: 900.ms,
                       curve: Curves.easeInOut,
                     ),
-
                 const SizedBox(height: 10),
-
                 Container(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 18,
@@ -151,9 +142,6 @@ class SensesAdventureRoom extends StatelessWidget {
               ],
             ),
           ),
-
-          // الحاسة الأولى
-
           Positioned(
             left: 12,
             top: 105,
@@ -163,9 +151,6 @@ class SensesAdventureRoom extends StatelessWidget {
               onTap: () => onSelectSense(0),
             ),
           ),
-
-          // الحاسة الثانية
-
           Positioned(
             right: 12,
             top: 105,
@@ -175,9 +160,6 @@ class SensesAdventureRoom extends StatelessWidget {
               onTap: () => onSelectSense(1),
             ),
           ),
-
-          // الحاسة الثالثة
-
           Positioned(
             left: 12,
             bottom: 28,
@@ -187,9 +169,6 @@ class SensesAdventureRoom extends StatelessWidget {
               onTap: () => onSelectSense(2),
             ),
           ),
-
-          // الحاسة الرابعة
-
           Positioned(
             right: 12,
             bottom: 28,
@@ -199,9 +178,6 @@ class SensesAdventureRoom extends StatelessWidget {
               onTap: () => onSelectSense(3),
             ),
           ),
-
-          // الحاسة الخامسة
-
           Positioned(
             bottom: 4,
             left: 0,

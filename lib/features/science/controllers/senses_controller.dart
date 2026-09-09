@@ -5,32 +5,9 @@ import 'package:flutter_confetti_engine/flutter_confetti_engine.dart';
 import 'package:get/get.dart';
 
 import '../../../component/app_audio.dart';
+import '../../../data/models/sense_item.dart';
+import '../../../data/models/sense_option.dart';
 
-class SenseOption {
-  final String name;
-  final String emoji;
-  final Color color;
-
-  const SenseOption({
-    required this.name,
-    required this.emoji,
-    required this.color,
-  });
-}
-
-class SenseItem {
-  final String name;
-  final String description;
-  final String emoji;
-  final Color color;
-
-  const SenseItem({
-    required this.name,
-    required this.description,
-    required this.emoji,
-    required this.color,
-  });
-}
 
 class SensesController extends GetxController {
   final FlutterTts _tts = FlutterTts();
@@ -41,6 +18,8 @@ class SensesController extends GetxController {
   final isSpeaking = false.obs;
   final highlightedOptionIndex = (-1).obs;
   final isTeaching = true.obs;
+
+  bool _isClosed = false;
 
   final List<SenseItem> senses = const [
     SenseItem(
@@ -163,7 +142,7 @@ class SensesController extends GetxController {
     ],
   ];
 
-  final List<int> correctAnswers = [0, 0, 0, 1, 1];
+  final List<int> correctAnswers = [0, 1, 0, 1, 1];
 
   SenseItem get currentSense => senses[currentIndex.value];
 
@@ -204,7 +183,11 @@ class SensesController extends GetxController {
 
     Future.delayed(
       const Duration(milliseconds: 700),
-      teachCurrent,
+      () {
+        if (!_isClosed) {
+          teachCurrent();
+        }
+      },
     );
   }
 
@@ -216,52 +199,76 @@ class SensesController extends GetxController {
     await _tts.awaitSpeakCompletion(true);
 
     _tts.setStartHandler(() {
-      isSpeaking.value = true;
+      if (!_isClosed) {
+        isSpeaking.value = true;
+      }
     });
 
     _tts.setCompletionHandler(() {
-      isSpeaking.value = false;
+      if (!_isClosed) {
+        isSpeaking.value = false;
+      }
     });
 
     _tts.setCancelHandler(() {
-      isSpeaking.value = false;
+      if (!_isClosed) {
+        isSpeaking.value = false;
+      }
     });
 
     _tts.setErrorHandler((message) {
-      isSpeaking.value = false;
+      if (!_isClosed) {
+        isSpeaking.value = false;
+      }
     });
   }
 
   Future<void> _speak(String text) async {
+    if (_isClosed) return;
+
     try {
       await _tts.speak(text);
     } catch (e) {
-      debugPrint('TTS Error: $e');
+      if (!_isClosed) {
+        debugPrint('TTS Error: $e');
+      }
     }
   }
 
   Future<void> teachCurrent() async {
+    if (_isClosed) return;
+
     isTeaching.value = true;
     highlightedOptionIndex.value = -1;
 
     await _tts.stop();
     await _animalPlayer.stop();
 
+    if (_isClosed) return;
+
     await _speak(
       '${currentSense.name}. ${currentSense.description}',
     );
 
+    if (_isClosed) return;
+
     await Future.delayed(
       const Duration(milliseconds: 450),
     );
+
+    if (_isClosed) return;
 
     await _speak(
       questionForCurrent,
     );
 
+    if (_isClosed) return;
+
     await Future.delayed(
       const Duration(milliseconds: 450),
     );
+
+    if (_isClosed) return;
 
     if (currentIndex.value == 1) {
       await _animalPlayer.play(
@@ -271,20 +278,28 @@ class SensesController extends GetxController {
       await Future.delayed(
         const Duration(milliseconds: 1500),
       );
+
+      if (_isClosed) return;
     }
 
     final currentOptions = optionsForCurrent;
 
     for (int i = 0; i < currentOptions.length; i++) {
+      if (_isClosed) return;
+
       highlightedOptionIndex.value = i;
 
       await _speak(
         currentOptions[i].name,
       );
 
+      if (_isClosed) return;
+
       await Future.delayed(
         const Duration(milliseconds: 500),
       );
+
+      if (_isClosed) return;
 
       highlightedOptionIndex.value = -1;
 
@@ -293,13 +308,19 @@ class SensesController extends GetxController {
       );
     }
 
+    if (_isClosed) return;
+
     highlightedOptionIndex.value = -1;
     isTeaching.value = false;
   }
 
   Future<void> speakCurrent() async {
+    if (_isClosed) return;
+
     await _tts.stop();
     await _animalPlayer.stop();
+
+    if (_isClosed) return;
 
     await _speak(
       '${currentSense.name}. ${currentSense.description}',
@@ -307,6 +328,8 @@ class SensesController extends GetxController {
   }
 
   void selectSense(int index) {
+    if (_isClosed) return;
+
     if (index < 0 || index >= senses.length) {
       return;
     }
@@ -316,6 +339,8 @@ class SensesController extends GetxController {
   }
 
   void nextSense() {
+    if (_isClosed) return;
+
     if (isLast) return;
 
     currentIndex.value++;
@@ -323,6 +348,8 @@ class SensesController extends GetxController {
   }
 
   void previousSense() {
+    if (_isClosed) return;
+
     if (isFirst) return;
 
     currentIndex.value--;
@@ -333,7 +360,7 @@ class SensesController extends GetxController {
     int index,
     BuildContext context,
   ) async {
-    if (isTeaching.value) {
+    if (_isClosed || isTeaching.value) {
       return;
     }
 
@@ -341,6 +368,8 @@ class SensesController extends GetxController {
 
     if (!correct) {
       await _tts.stop();
+
+      if (_isClosed) return;
 
       await _speak(
         'حاول مرة أخرى',
@@ -354,9 +383,13 @@ class SensesController extends GetxController {
     await _tts.stop();
     await _animalPlayer.stop();
 
+    if (_isClosed) return;
+
     await _speak(
       'أحسنت! إجابة صحيحة',
     );
+
+    if (_isClosed) return;
 
     ConfettiEngine.celebrate(
       context,
@@ -369,7 +402,11 @@ class SensesController extends GetxController {
     if (isLast) {
       Future.delayed(
         const Duration(milliseconds: 700),
-        () => _showFinishedDialog(context),
+        () {
+          if (!_isClosed) {
+            _showFinishedDialog(context);
+          }
+        },
       );
 
       return;
@@ -377,13 +414,19 @@ class SensesController extends GetxController {
 
     Future.delayed(
       const Duration(milliseconds: 900),
-      nextSense,
+      () {
+        if (!_isClosed) {
+          nextSense();
+        }
+      },
     );
   }
 
   void _showFinishedDialog(
     BuildContext context,
   ) {
+    if (_isClosed) return;
+
     Get.dialog(
       Dialog(
         shape: RoundedRectangleBorder(
@@ -453,9 +496,15 @@ class SensesController extends GetxController {
 
   @override
   void onClose() {
+    _isClosed = true;
+    isSpeaking.value = false;
+    highlightedOptionIndex.value = -1;
+    isTeaching.value = false;
+
     _tts.stop();
     _animalPlayer.stop();
     _animalPlayer.dispose();
+
     super.onClose();
   }
 }

@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
 
 import '../../../core/theme/app_colors.dart';
+import '../../../data/models/sense_option.dart';
 import '../../../data/models/sense_option_model.dart';
 import '../../science/controllers/senses_controller.dart';
 

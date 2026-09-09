@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../data/models/sense_option_model.dart';
-import '../../science/controllers/senses_controller.dart';
+import '../../../data/models/sense_item.dart';
+
 import 'senses_answer_grid.dart';
-import 'senses_mini_icon.dart';
+
 
 class SensesChallengeArea extends StatelessWidget {
   const SensesChallengeArea({

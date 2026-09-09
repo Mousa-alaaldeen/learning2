@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_drawing_board/flutter_drawing_board.dart';
 
 import '../../../../core/theme/app_colors.dart';
-import '../../controllers/writing_controller.dart';
+import '../../controllers/english_writing_controller.dart';
 
-class DrawingBoardWidget extends StatelessWidget {
-  final WritingController controller;
+class EnglishDrawingBoardWidget extends StatelessWidget {
+  final EnglishWritingController controller;
 
-  const DrawingBoardWidget({
+  const EnglishDrawingBoardWidget({
     super.key,
     required this.controller,
   });
@@ -46,7 +46,7 @@ class DrawingBoardWidget extends StatelessWidget {
                         controller.currentLetter.letter,
                         style: TextStyle(
                           fontFamily: 'Amiri',
-                          fontSize: 200,
+                          fontSize: 280,
                           fontWeight: FontWeight.bold,
                           color: AppColors.lettersProgressBackground,
                         ),
@@ -59,7 +59,6 @@ class DrawingBoardWidget extends StatelessWidget {
                         width: 100,
                         height: 100,
                         decoration: BoxDecoration(
-                          color: AppColors.arabicLetters.withOpacity(0.12),
                           borderRadius: BorderRadius.circular(16),
                         ),
                         child: Text(
