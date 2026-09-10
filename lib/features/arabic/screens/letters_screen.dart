@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:get/get.dart';
-
 import '../../../core/theme/app_colors.dart';
 import '../../../core/widgets/common/game_progress_badge.dart';
-import '../../../core/widgets/common/game_round_button.dart';
 import '../../../core/widgets/common/game_title.dart';
 import '../../../core/widgets/common/game_top_bar.dart';
 import '../../../core/widgets/letters/letter_adventure.dart';

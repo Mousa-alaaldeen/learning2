@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print
+// ignore_for_file: deprecated_member_use, avoid_print
 
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';

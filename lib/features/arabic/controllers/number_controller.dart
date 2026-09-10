@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+import 'package:get/get.dart';
 import '../../../core/services/tts_service.dart';
 import '../../../data/local/learning_data.dart';
 import '../../../data/models/number_model.dart';
@@ -12,13 +11,12 @@ class NumberController extends GetxController {
 
   final currentIndex = 0.obs;
 
-  // عدد التفاحات التي ظهرت حاليًا
   final visibleObjects = 0.obs;
 
-  // هل العد يعمل؟
+
   final isCounting = false.obs;
 
-  // النجوم
+
   final totalStars = 0.obs;
 
   NumberModel get currentNumber => numbers[currentIndex.value];
@@ -39,12 +37,12 @@ class NumberController extends GetxController {
 
     _ttsService.init();
 
-    // عند فتح الصفحة يبدأ من التفاحة الأولى
+
     playCounting();
   }
 
   // ==========================================================
-  // قراءة الرقم الحالي فقط
+
   // ==========================================================
 
   Future<void> speakNumber() async {
@@ -54,7 +52,7 @@ class NumberController extends GetxController {
   }
 
   // ==========================================================
-  // العد
+
   // ==========================================================
 
   Future<void> playCounting() async {
@@ -62,10 +60,9 @@ class NumberController extends GetxController {
 
     isCounting.value = true;
 
-    // نبدأ من صفر
     visibleObjects.value = 0;
 
-    // نعطي Flutter فرصة لإعادة بناء الشاشة
+   
     await Future.delayed(
       const Duration(milliseconds: 300),
     );

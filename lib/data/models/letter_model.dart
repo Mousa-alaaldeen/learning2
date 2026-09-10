@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class LetterModel {
 final String letter;

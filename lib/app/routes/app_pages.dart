@@ -15,11 +15,13 @@ import '../../features/english/bindings/english_senses_binding.dart';
 import '../../features/english/bindings/english_week_days_binding.dart';
 import '../../features/english/bindings/english_writing_binding.dart';
 import '../../features/english/bindings/english_writing_numbers_binding.dart';
+import '../../features/english/bindings/stories_binding.dart';
 import '../../features/english/screens/english_letters_screen.dart';
 import '../../features/english/screens/english_senses_screen.dart';
 import '../../features/english/screens/english_week_days_screen.dart';
 import '../../features/english/screens/english_writing_numbers_screen.dart';
 import '../../features/english/screens/english_writing_screen.dart';
+import '../../features/english/screens/stories_screen.dart';
 import '../../features/science/screens/senses_screen.dart';
 import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/screens/home_screen.dart';
@@ -124,6 +126,11 @@ class AppPages {
       name: AppRoutes.englishSenses,
       page: () => const EnglishSensesScreen(),
       binding: EnglishSensesBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishStories,
+      page: () => const StoriesScreen(),
+      binding: StoriesBinding(),
     ),
   ];
 }

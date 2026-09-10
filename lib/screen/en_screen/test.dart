@@ -1,3 +1,5 @@
+// ignore_for_file: sort_child_properties_last, library_private_types_in_public_api, use_key_in_widget_constructors
+
 import 'package:flutter/material.dart';
 import 'package:test1/component/app_images.dart';
 
@@ -17,7 +19,7 @@ class _TestState extends State<Test> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        // الصندوق
+
         Positioned(
           top: 0,
           left: 0,
@@ -27,7 +29,7 @@ class _TestState extends State<Test> {
             color: Colors.blue,
           ),
         ),
-        // التفاحة الأولى
+      
         Positioned(
           top: apple1Y,
           left: apple1X,
