@@ -20,6 +20,7 @@ class EnglishController extends GetxController {
     Get.toNamed(AppRoutes.englishWritingNumbers);
   }
 
+
   void openSenses() {
     Ads().showAd();
     Get.toNamed(AppRoutes.englishSenses);
@@ -33,7 +34,8 @@ class EnglishController extends GetxController {
   void openWeekDays() {
     Get.toNamed(AppRoutes.englishWeekDays);
   }
+
   void openColors() {
-  Get.toNamed(AppRoutes.englishColors);
-}
+    Get.toNamed(AppRoutes.englishColors);
+  }
 }

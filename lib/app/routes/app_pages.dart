@@ -11,10 +11,12 @@ import '../../features/colors/bindings/arabic_colors_binding.dart';
 import '../../features/colors/bindings/english_colors_binding.dart';
 import '../../features/colors/screens/english_colors_screen.dart';
 import '../../features/english/bindings/english_letters_binding.dart';
+import '../../features/english/bindings/english_senses_binding.dart';
 import '../../features/english/bindings/english_week_days_binding.dart';
 import '../../features/english/bindings/english_writing_binding.dart';
 import '../../features/english/bindings/english_writing_numbers_binding.dart';
 import '../../features/english/screens/english_letters_screen.dart';
+import '../../features/english/screens/english_senses_screen.dart';
 import '../../features/english/screens/english_week_days_screen.dart';
 import '../../features/english/screens/english_writing_numbers_screen.dart';
 import '../../features/english/screens/english_writing_screen.dart';
@@ -117,6 +119,11 @@ class AppPages {
       name: AppRoutes.englishWeekDays,
       page: () => const EnglishWeekDaysScreen(),
       binding: EnglishWeekDaysBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishSenses,
+      page: () => const EnglishSensesScreen(),
+      binding: EnglishSensesBinding(),
     ),
   ];
 }
