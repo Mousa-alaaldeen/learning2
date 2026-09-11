@@ -32,6 +32,10 @@ static const azan = '/islam/azan';
 static const tashahhud = '/islam/tashahhud';
 
 static const exams = '/exams';
+static const arabicNumbersExams = '/exams/arabic-numbers-exams';
+static const englishNumbersExams = '/exams/english-numbers-exams';
+static const arabicLettersExams = '/exams/arabic-letters-exams';
+static const englishLettersExams = '/exams/english-letters-exams';
 
   static const science = '/science';
   static const animalSounds = '/science/animal-sounds';

@@ -123,4 +123,17 @@ abstract final class AppColors {
 
   static const sensesBlue = Color(0xFF35A9F0);
   static const sensesBackgroundBottom = Color(0xFFEDE7FF);
+
+  static const sensesProgressBackground = Color(0xFFDDE3F0);
+
+  static const sensesDecorationAmber = Colors.amber;
+  static const sensesDecorationOrange = Colors.orange;
+  static const sensesDecorationPurple = Colors.purple;
+  static const englishNumbers = Color(0xFF35A9F0);
+
+  static const englishLetters = Color(0xFF8759E8);
+
+  static const englishWriting = Color(0xFFFFB52E);
+
+  static const englishSenses = Color(0xFF63C83F);
 }
