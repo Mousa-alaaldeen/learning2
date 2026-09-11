@@ -9,7 +9,7 @@ class ExamsController extends GetxController {
   }
 
   void openEnglishNumbers() {
-     Get.toNamed(AppRoutes.englishWritingNumbers);
+     Get.toNamed(AppRoutes.englishNumbersExams);
 
   }
   void openArabicLetters() {

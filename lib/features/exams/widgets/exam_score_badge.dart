@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
-
 class ExamScoreBadge extends StatelessWidget {
   final int score;
+  final Color color;
 
   const ExamScoreBadge({
     super.key,
     required this.score,
+    required this.color,
   });
 
   @override
@@ -18,7 +18,7 @@ class ExamScoreBadge extends StatelessWidget {
         vertical: 8,
       ),
       decoration: BoxDecoration(
-        color: AppColors.arabicNumbers.withOpacity(.12),
+        color: color.withOpacity(.12),
         borderRadius: BorderRadius.circular(20),
       ),
       child: Text(

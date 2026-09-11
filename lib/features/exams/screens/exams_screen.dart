@@ -5,7 +5,6 @@ import '../../../core/theme/app_colors.dart';
 import '../../../core/theme/icon_broken.dart';
 import '../../../core/widgets/common/game_round_button.dart';
 import '../../../core/widgets/common/game_title.dart';
-import '../../../core/widgets/common/game_top_bar.dart';
 import '../../../core/widgets/common/learning_category_card.dart';
 import '../controllers/exams_controller.dart';
 

@@ -20,7 +20,9 @@ class ExamGameOver extends StatelessWidget {
         children: [
           const Text(
             '🎉',
-            style: TextStyle(fontSize: 70),
+            style: TextStyle(
+              fontSize: 70,
+            ),
           ),
           const SizedBox(height: 10),
           const Text(

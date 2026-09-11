@@ -4,25 +4,47 @@ import '../../../core/theme/app_colors.dart';
 import 'exam_apple_items.dart';
 import 'exam_number_targets.dart';
 
-
 class ExamGameBoard extends StatelessWidget {
-  const ExamGameBoard({super.key});
+  final List<Map<String, dynamic>> items;
+  final List<Map<String, dynamic>> targets;
+  final Color color;
+  final void Function(
+    Map<String, dynamic> item,
+    Map<String, dynamic> target,
+  ) onAccept;
+
+  const ExamGameBoard({
+    super.key,
+    required this.items,
+    required this.targets,
+    required this.color,
+    required this.onAccept,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        const Expanded(
-          child: ExamAppleItems(),
+        Expanded(
+          child: ExamAppleItems(
+            items: items,
+            color: color,
+          ),
         ),
         Container(
           width: 2,
           height: double.infinity,
-          margin: const EdgeInsets.symmetric(vertical: 20),
-          color: AppColors.arabicNumbers.withOpacity(.15),
+          margin: const EdgeInsets.symmetric(
+            vertical: 20,
+          ),
+          color: color.withOpacity(.15),
         ),
-        const Expanded(
-          child: ExamNumberTargets(),
+        Expanded(
+          child: ExamNumberTargets(
+            targets: targets,
+            color: color,
+            onAccept: onAccept,
+          ),
         ),
       ],
     );

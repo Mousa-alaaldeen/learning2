@@ -23,8 +23,10 @@ import '../../features/english/screens/english_writing_numbers_screen.dart';
 import '../../features/english/screens/english_writing_screen.dart';
 import '../../features/english/screens/stories_screen.dart';
 import '../../features/exams/bindings/arabic_numbers_exam_binding.dart';
+import '../../features/exams/bindings/english_numbers_exams_binding.dart';
 import '../../features/exams/bindings/exams_binding.dart';
 import '../../features/exams/screens/arabic_numbers_exam_screen.dart';
+import '../../features/exams/screens/english_numbers_exam_screen.dart';
 import '../../features/exams/screens/exams_screen.dart';
 import '../../features/islam/binding/ablution_binding.dart';
 import '../../features/islam/binding/azan_binding.dart';
@@ -187,6 +189,11 @@ class AppPages {
       name: AppRoutes.arabicNumbersExams,
       page: () => const ArabicNumbersExamScreen(),
       binding: ArabicNumbersExamsBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.englishNumbersExams,
+      page: () => const EnglishNumbersExamScreen(),
+      binding: EnglishNumbersExamsBinding(),
     ),
   ];
 }

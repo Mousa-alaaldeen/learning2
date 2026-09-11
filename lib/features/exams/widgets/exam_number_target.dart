@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
-
 class ExamNumberTarget extends StatelessWidget {
   final String number;
   final bool isHovering;
+  final Color color;
 
   const ExamNumberTarget({
     super.key,
     required this.number,
     required this.isHovering,
+    required this.color,
   });
 
   @override
@@ -19,11 +19,11 @@ class ExamNumberTarget extends StatelessWidget {
       height: 90,
       decoration: BoxDecoration(
         color: isHovering
-            ? AppColors.arabicNumbers.withOpacity(.18)
+            ? color.withOpacity(.18)
             : Colors.white,
         borderRadius: BorderRadius.circular(22),
         border: Border.all(
-          color: AppColors.arabicNumbers.withOpacity(
+          color: color.withOpacity(
             isHovering ? .8 : .2,
           ),
           width: isHovering ? 3 : 1.5,
@@ -40,7 +40,6 @@ class ExamNumberTarget extends StatelessWidget {
         child: Text(
           number,
           style: const TextStyle(
-            fontFamily: 'Amiri',
             fontSize: 38,
             fontWeight: FontWeight.w900,
           ),

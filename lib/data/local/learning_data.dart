@@ -204,7 +204,18 @@ class LearningData {
       value: 10,
     ),
   ];
-
+  static final englishNumbersExam = <Map<String, dynamic>>[
+    {'number': '1', 'count': 1},
+    {'number': '2', 'count': 2},
+    {'number': '3', 'count': 3},
+    {'number': '4', 'count': 4},
+    {'number': '5', 'count': 5},
+    {'number': '6', 'count': 6},
+    {'number': '7', 'count': 7},
+    {'number': '8', 'count': 8},
+    {'number': '9', 'count': 9},
+    {'number': '10', 'count': 10},
+  ];
   static final List<AnimalModel> animalsList = [
     AnimalModel(
       emoji: '🐦',

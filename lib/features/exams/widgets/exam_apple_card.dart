@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/theme/app_colors.dart';
-
 class ExamAppleCard extends StatelessWidget {
   final Map<String, dynamic> item;
   final bool dragging;
+  final Color color;
 
   const ExamAppleCard({
     super.key,
     required this.item,
     this.dragging = false,
+    required this.color,
   });
 
   @override
@@ -26,7 +26,7 @@ class ExamAppleCard extends StatelessWidget {
         color: Colors.white,
         borderRadius: BorderRadius.circular(22),
         border: Border.all(
-          color: AppColors.arabicNumbers.withOpacity(.25),
+          color: color.withOpacity(.25),
           width: 1.5,
         ),
         boxShadow: [
@@ -60,7 +60,6 @@ class ExamAppleCard extends StatelessWidget {
           Text(
             item['number'],
             style: const TextStyle(
-              fontFamily: 'Amiri',
               fontSize: 22,
               fontWeight: FontWeight.w900,
             ),
