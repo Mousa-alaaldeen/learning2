@@ -1,15 +1,8 @@
 import 'package:get/get.dart';
 import 'package:test1/component/ads/interstitial_ad.dart';
-
-import 'package:test1/screen/animal_screen.dart/animal_screen.dart';
-import 'package:test1/screen/ar_screen/ar_screen.dart';
-import 'package:test1/screen/colors/colora_screen.dart';
-import 'package:test1/screen/en_screen/en_screen.dart';
 import 'package:test1/screen/exam/exam_layout.dart';
-import 'package:test1/screen/islam/islam_screen.dart';
-
 import '../../../app/routes/app_routes.dart';
-import '../../science/screens/science_screen.dart';
+import '../../../screen/colors/colora_screen.dart';
 
 class HomeController extends GetxController {
   void openArabic() {
@@ -27,10 +20,10 @@ class HomeController extends GetxController {
   void openColors() {
     Get.to(() => const ColorsScreen());
   }
+void openIslam() {
+  Get.toNamed(AppRoutes.islam);
+}
 
-  void openIslam() {
-    Get.to(() => const IslamScreen());
-  }
 
   void openExams() {
     Ads().showAd();

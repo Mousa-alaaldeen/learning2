@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:test1/data/models/letter_model.dart';
 import '../../component/app_audio.dart';
+import '../../core/theme/app_colors.dart';
 import '../models/color_model.dart';
+import '../models/pillar_model.dart';
 import '../models/sense_option_model.dart';
 import '../models/number_model.dart';
 import '../models/week_day_model.dart';
@@ -566,7 +569,7 @@ class LearningData {
     ),
   ];
 
-  static const List<WeekDayModel> englishWeekDays = [
+  static final List<WeekDayModel> englishWeekDays = [
     WeekDayModel(
       day: 'Sunday',
       name: 'Sunday',
@@ -602,5 +605,190 @@ class LearningData {
       name: 'Saturday',
       value: 7,
     ),
+  ];
+
+  static final pillars = <PillarModel>[
+    const PillarModel(
+      title: 'الشهادتان',
+      description: 'أشهد أن لا إله إلا الله، وأشهد أن محمدًا رسول الله.',
+      emoji: '🤲',
+      icon: Icons.volunteer_activism_rounded,
+      color: AppColors.arabicLetters,
+    ),
+    const PillarModel(
+      title: 'الصلاة',
+      description: 'إقامة الصلوات الخمس والمحافظة عليها في أوقاتها.',
+      emoji: '🕌',
+      icon: Icons.mosque_rounded,
+      color: AppColors.arabicNumbers,
+    ),
+    const PillarModel(
+      title: 'الزكاة',
+      description: 'إخراج الزكاة لمن يستحقها طاعةً لله تعالى.',
+      emoji: '💰',
+      icon: Icons.favorite_rounded,
+      color: AppColors.numbersGreen,
+    ),
+    const PillarModel(
+      title: 'صوم رمضان',
+      description: 'صيام شهر رمضان المبارك طاعةً لله تعالى.',
+      emoji: '🌙',
+      icon: Icons.nightlight_round,
+      color: AppColors.sensesBlue,
+    ),
+    const PillarModel(
+      title: 'الحج',
+      description: 'حج بيت الله الحرام لمن استطاع إليه سبيلًا.',
+      emoji: '🕋',
+      icon: Icons.location_on_rounded,
+      color: AppColors.numbersDecorationPurple,
+    ),
+  ];
+
+  static final pillarsOfFaith = <PillarModel>[
+    const PillarModel(
+      title: 'الإيمان بالله',
+      description: 'الإيمان بأن الله واحد لا شريك له، وهو خالق كل شيء.',
+      emoji: '☝️',
+      icon: Icons.auto_awesome_rounded,
+      color: AppColors.arabicLetters,
+    ),
+    const PillarModel(
+      title: 'الإيمان بالملائكة',
+      description: 'الإيمان بوجود ملائكة الله وأنهم عباد مكرمون.',
+      emoji: '👼',
+      icon: Icons.cloud_rounded,
+      color: AppColors.arabicNumbers,
+    ),
+    const PillarModel(
+      title: 'الإيمان بالكتب',
+      description: 'الإيمان بالكتب التي أنزلها الله على رسله.',
+      emoji: '📖',
+      icon: Icons.menu_book_rounded,
+      color: AppColors.numbersGreen,
+    ),
+    const PillarModel(
+      title: 'الإيمان بالرسل',
+      description: 'الإيمان بجميع رسل الله الذين أرسلهم لهداية الناس.',
+      emoji: '🧑‍🤝‍🧑',
+      icon: Icons.people_alt_rounded,
+      color: AppColors.sensesBlue,
+    ),
+    const PillarModel(
+      title: 'الإيمان باليوم الآخر',
+      description: 'الإيمان بالبعث والحساب والجنة والنار.',
+      emoji: '🌅',
+      icon: Icons.wb_sunny_rounded,
+      color: AppColors.numbersDecorationPurple,
+    ),
+    const PillarModel(
+      title: 'الإيمان بالقدر',
+      description: 'الإيمان بأن كل شيء يحدث بقدر الله تعالى وعلمه.',
+      emoji: '✨',
+      icon: Icons.stars_rounded,
+      color: AppColors.lettersTitle,
+    ),
+  ];
+
+  static final azanParts = [
+    {
+      'title': 'الله أكبر',
+      'description': 'الله أكبر، الله أكبر',
+      'emoji': '🕌',
+    },
+    {
+      'title': 'أشهد أن لا إله إلا الله',
+      'description': 'أشهد أن لا إله إلا الله',
+      'emoji': '☝️',
+    },
+    {
+      'title': 'أشهد أن محمدًا رسول الله',
+      'description': 'أشهد أن محمدًا رسول الله',
+      'emoji': '🌙',
+    },
+    {
+      'title': 'حي على الصلاة',
+      'description': 'حي على الصلاة',
+      'emoji': '🤲',
+    },
+    {
+      'title': 'حي على الفلاح',
+      'description': 'حي على الفلاح',
+      'emoji': '🌟',
+    },
+    {
+      'title': 'الله أكبر',
+      'description': 'الله أكبر، الله أكبر',
+      'emoji': '🕌',
+    },
+    {
+      'title': 'لا إله إلا الله',
+      'description': 'لا إله إلا الله',
+      'emoji': '❤️',
+    },
+  ];
+
+  static final dua = {
+    'title': 'دعاء الأذان',
+    'description':
+        'اللهم رب هذه الدعوة التامة، والصلاة القائمة، آت محمدًا الوسيلة والفضيلة، وابعثه مقامًا محمودًا الذي وعدته.',
+    'emoji': '🤲',
+  };
+
+  static final tashahhud = [
+    {
+      'title': 'التشهد',
+      'description':
+          'التحيات لله والصلوات والطيبات، السلام عليك أيها النبي ورحمة الله وبركاته، السلام علينا وعلى عباد الله الصالحين، أشهد أن لا إله إلا الله، وأشهد أن محمدًا عبده ورسوله.',
+      'emoji': '🤲',
+    },
+    {
+      'title': 'الصلاة الإبراهيمية',
+      'description':
+          'اللهم صل على محمد وعلى آل محمد، كما صليت على إبراهيم وعلى آل إبراهيم، إنك حميد مجيد، اللهم بارك على محمد وعلى آل محمد، كما باركت على إبراهيم وعلى آل إبراهيم، إنك حميد مجيد.',
+      'emoji': '🕌',
+    },
+  ];
+  static final ablution = [
+    {
+      'title': 'غسل الكفين',
+      'description': 'نغسل الكفين جيدًا إلى الرسغين.',
+      'emoji': '👐',
+    },
+    {
+      'title': 'المضمضة',
+      'description': 'نتمضمض بالماء ونغسل الفم.',
+      'emoji': '👄',
+    },
+    {
+      'title': 'الاستنشاق',
+      'description': 'نستنشق الماء إلى الأنف ثم نخرجه.',
+      'emoji': '👃',
+    },
+    {
+      'title': 'غسل الوجه',
+      'description': 'نغسل الوجه كاملًا بالماء.',
+      'emoji': '😊',
+    },
+    {
+      'title': 'غسل اليدين إلى المرفقين',
+      'description': 'نغسل اليدين إلى المرفقين، ونبدأ باليمين.',
+      'emoji': '💪',
+    },
+    {
+      'title': 'مسح الرأس',
+      'description': 'نمسح الرأس بالماء.',
+      'emoji': '💦',
+    },
+    {
+      'title': 'مسح الأذنين',
+      'description': 'نمسح الأذنين بالماء.',
+      'emoji': '👂',
+    },
+    {
+      'title': 'غسل الرجلين',
+      'description': 'نغسل الرجلين إلى الكعبين، ونبدأ باليمين.',
+      'emoji': '🦶',
+    },
   ];
 }

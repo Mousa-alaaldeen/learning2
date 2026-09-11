@@ -7,7 +7,6 @@ import 'app/routes/app_routes.dart';
 import 'component/cache_helper.dart';
 import 'component/components.dart';
 import 'core/theme/app_theme.dart';
-import 'screen/splach/splash_screen.dart';
 import 'generated/l10n.dart';
 
 Future<void> main() async {

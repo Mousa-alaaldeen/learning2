@@ -20,11 +20,18 @@ static const englishStories = '/english/stories';
 static const englishWeekDays = '/english/week-days';
 static const englishColors = '/english-colors';
 
+static const animals = '/animals';
 
-  static const animals = '/animals';
-  static const colors = '/colors';
-  static const islam = '/islam';
-  static const exams = '/exams';
+static const colors = '/colors';
+
+static const islam = '/islam';
+static const pillarsOfIslam = '/islam/pillars-of-islam';
+static const pillarsOfFaith = '/islam/pillars-of-faith';
+static const ablution = '/islam/ablution';
+static const azan = '/islam/azan';
+static const tashahhud = '/islam/tashahhud';
+
+static const exams = '/exams';
 
   static const science = '/science';
   static const animalSounds = '/science/animal-sounds';

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/theme/app_colors.dart';
-import '../../../core/widgets/common/game_progress_badge.dart';
 import '../../../core/widgets/common/game_top_bar.dart';
 import '../../../core/widgets/common/game_title.dart';
 import '../../../core/widgets/numbers/counting_card.dart';

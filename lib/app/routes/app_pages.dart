@@ -22,6 +22,18 @@ import '../../features/english/screens/english_week_days_screen.dart';
 import '../../features/english/screens/english_writing_numbers_screen.dart';
 import '../../features/english/screens/english_writing_screen.dart';
 import '../../features/english/screens/stories_screen.dart';
+import '../../features/islam/binding/ablution_binding.dart';
+import '../../features/islam/binding/azan_binding.dart';
+import '../../features/islam/binding/islam_binding.dart';
+import '../../features/islam/binding/pillars_of_faith_binding.dart';
+import '../../features/islam/binding/pillars_of_islam_binding.dart';
+import '../../features/islam/binding/tashahhud_binding.dart';
+import '../../features/islam/screen/ablution_screen.dart';
+import '../../features/islam/screen/azan_screen.dart';
+import '../../features/islam/screen/islam_screen.dart';
+import '../../features/islam/screen/pillars_of_faith_screen.dart';
+import '../../features/islam/screen/pillars_of_islam_screen.dart';
+import '../../features/islam/screen/tashahhud_screen.dart';
 import '../../features/science/screens/senses_screen.dart';
 import '../../features/home/bindings/home_binding.dart';
 import '../../features/home/screens/home_screen.dart';
@@ -131,6 +143,36 @@ class AppPages {
       name: AppRoutes.englishStories,
       page: () => const StoriesScreen(),
       binding: StoriesBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.islam,
+      page: () => const IslamScreen(),
+      binding: IslamBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.pillarsOfIslam,
+      page: () => const PillarsOfIslamScreen(),
+      binding: PillarsOfIslamBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.pillarsOfFaith,
+      page: () => const PillarsOfFaithScreen(),
+      binding: PillarsOfFaithBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.azan,
+      page: () => const AzanScreen(),
+      binding: AzanBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.tashahhud,
+      page: () => const TashahhudScreen(),
+      binding: TashahhudBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.ablution,
+      page: () => const AblutionScreen(),
+      binding: AblutionBinding(),
     ),
   ];
 }
